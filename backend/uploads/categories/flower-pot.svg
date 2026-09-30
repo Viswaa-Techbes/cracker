@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <defs>
+    <radialGradient id="grad-flower-pot" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFAB40" />
+      <stop offset="100%" stop-color="#E64A19" />
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="24" fill="url(#grad-flower-pot)" />
+  <g filter="url(#shadow)">
+    <polygon points="70,170 130,170 145,100 55,100" fill="#D84315" />
+             <path d="M55,100 Q100,20 145,100" fill="#FFD54F" />
+             <path d="M100,90 Q90,30 100,15 Q110,30 100,90" fill="#FFF" />
+             <circle cx="70" cy="50" r="4" fill="#FFEB3B" />
+             <circle cx="130" cy="50" r="4" fill="#FFEB3B" />
+  </g>
+  <text x="100" y="185" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" letter-spacing="1">FLOWER POT</text>
+</svg>

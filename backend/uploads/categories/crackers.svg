@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <defs>
+    <radialGradient id="grad-crackers" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FF5252" />
+      <stop offset="100%" stop-color="#C62828" />
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="24" fill="url(#grad-crackers)" />
+  <g filter="url(#shadow)">
+    <rect x="60" y="70" width="20" height="80" rx="4" fill="#B71C1C" transform="rotate(-15 70 110)" />
+             <rect x="85" y="65" width="20" height="80" rx="4" fill="#D32F2F" />
+             <rect x="110" y="70" width="20" height="80" rx="4" fill="#B71C1C" transform="rotate(15 120 110)" />
+             <path d="M95,65 Q100,35 110,30" stroke="#FFD54F" stroke-width="4" fill="none" />
+             <circle cx="112" cy="28" r="6" fill="#FFEB3B" />
+  </g>
+  <text x="100" y="185" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" letter-spacing="1">CRACKERS</text>
+</svg>

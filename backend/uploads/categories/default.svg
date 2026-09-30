@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <defs>
+    <radialGradient id="grad-sparkles" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFD54F" />
+      <stop offset="100%" stop-color="#FF6F00" />
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="24" fill="url(#grad-sparkles)" />
+  <g filter="url(#shadow)">
+    <path d="M100,30 L115,75 L160,85 L125,115 L135,160 L95,130 L55,160 L65,115 L30,85 L75,75 Z" fill="#FFE082" />
+             <line x1="100" y1="130" x2="100" y2="190" stroke="#FF8F00" stroke-width="6" stroke-linecap="round" />
+  </g>
+  <text x="100" y="185" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" letter-spacing="1">SPARKLES</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <defs>
+    <radialGradient id="grad-fancy" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#E040FB" />
+      <stop offset="100%" stop-color="#7B1FA2" />
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="24" fill="url(#grad-fancy)" />
+  <g filter="url(#shadow)">
+    <circle cx="100" cy="90" r="45" fill="#FF4081" />
+             <polygon points="100,20 120,60 170,70 130,105 145,155 100,125 55,155 70,105 30,70 80,60" fill="#FFD700" opacity="0.8" />
+  </g>
+  <text x="100" y="185" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" letter-spacing="1">FANCY</text>
+</svg>

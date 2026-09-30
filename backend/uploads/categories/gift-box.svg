@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <defs>
+    <radialGradient id="grad-gift-box" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#B71C1C" />
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="24" fill="url(#grad-gift-box)" />
+  <g filter="url(#shadow)">
+    <rect x="50" y="80" width="100" height="90" fill="#C62828" rx="6" />
+             <rect x="44" y="65" width="112" height="20" fill="#D32F2F" rx="4" />
+             <rect x="93" y="65" width="14" height="105" fill="#FFD700" />
+             <path d="M85,50 C80,35 65,40 75,55 C85,65 95,65 95,65 C95,65 95,55 85,50 Z" fill="#FFD700" />
+             <path d="M115,50 C120,35 135,40 125,55 C115,65 105,65 105,65 C105,65 105,55 115,50 Z" fill="#FFD700" />
+  </g>
+  <text x="100" y="185" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" letter-spacing="1">GIFT BOX</text>
+</svg>

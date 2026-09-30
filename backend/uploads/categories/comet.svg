@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <defs>
+    <radialGradient id="grad-comet" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#536DFE" />
+      <stop offset="100%" stop-color="#1A237E" />
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="24" fill="url(#grad-comet)" />
+  <g filter="url(#shadow)">
+    <rect x="70" y="80" width="60" height="90" rx="6" fill="#283593" />
+             <circle cx="100" cy="65" r="14" fill="#FFD600" />
+             <line x1="100" y1="50" x2="100" y2="15" stroke="#FF5722" stroke-width="8" stroke-linecap="round" />
+             <circle cx="80" cy="25" r="5" fill="#FF9E80" />
+             <circle cx="120" cy="25" r="5" fill="#FF9E80" />
+  </g>
+  <text x="100" y="185" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" letter-spacing="1">COMET SHOTS</text>
+</svg>

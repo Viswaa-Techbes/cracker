@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <defs>
+    <radialGradient id="grad-bomb" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#78909C" />
+      <stop offset="100%" stop-color="#37474F" />
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="24" fill="url(#grad-bomb)" />
+  <g filter="url(#shadow)">
+    <circle cx="100" cy="115" r="50" fill="#212121" />
+             <rect x="92" y="55" width="16" height="15" fill="#616161" rx="2" />
+             <path d="M100,55 Q115,35 130,40" stroke="#FF5722" stroke-width="4" fill="none" />
+             <polygon points="130,35 140,40 135,45 142,50 130,48" fill="#FFEB3B" />
+  </g>
+  <text x="100" y="185" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" letter-spacing="1">BOMB</text>
+</svg>

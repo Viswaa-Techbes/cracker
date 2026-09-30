@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <defs>
+    <radialGradient id="grad-colour-koti" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#00E676" />
+      <stop offset="100%" stop-color="#00796B" />
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="24" fill="url(#grad-colour-koti)" />
+  <g filter="url(#shadow)">
+    <polygon points="75,180 125,180 115,80 85,80" fill="#00897B" />
+             <path d="M100,80 L130,20 L100,35 L70,20 Z" fill="#76FF03" />
+  </g>
+  <text x="100" y="185" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" letter-spacing="1">COLOUR KOTI</text>
+</svg>

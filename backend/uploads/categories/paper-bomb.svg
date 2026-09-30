@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <defs>
+    <radialGradient id="grad-paper-bomb" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#A1887F" />
+      <stop offset="100%" stop-color="#4E342E" />
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="24" fill="url(#grad-paper-bomb)" />
+  <g filter="url(#shadow)">
+    <polygon points="100,45 155,80 155,140 100,175 45,140 45,80" fill="#5D4037" stroke="#FFCC80" stroke-width="4" />
+             <line x1="45" y1="80" x2="155" y2="140" stroke="#FFCC80" stroke-width="3" />
+             <line x1="155" y1="80" x2="45" y2="140" stroke="#FFCC80" stroke-width="3" />
+             <line x1="100" y1="45" x2="100" y2="175" stroke="#FFCC80" stroke-width="3" />
+  </g>
+  <text x="100" y="185" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" letter-spacing="1">PAPER BOMB</text>
+</svg>

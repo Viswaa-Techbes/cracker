@@ -14,7 +14,7 @@ import {
   Filter,
 } from 'lucide-react';
 import AdminHeader from '@/components/AdminHeader';
-import ProductModal from '@/components/ProductModal';
+import AdminProductModal from '@/components/AdminProductModal';
 import { fetchApi, getImageUrl } from '@/lib/api';
 import { formatCurrency } from '@/lib/utils';
 import { useToast } from '@/lib/toastContext';
@@ -313,7 +313,7 @@ export default function AdminProductsPage() {
 
       </div>
 
-      <ProductModal
+      <AdminProductModal
         isOpen={isModalOpen}
         product={editingProduct}
         categories={categories}

@@ -110,6 +110,8 @@ export async function fetchApi<T = any>(
         (p) =>
           p.name.toLowerCase().includes(q) ||
           p.category.toLowerCase().includes(q) ||
+          p.categorySlug.toLowerCase().includes(q) ||
+          p.categorySlug.replace(/-/g, ' ').toLowerCase().includes(q) ||
           (p.company && p.company.toLowerCase().includes(q))
       );
     }

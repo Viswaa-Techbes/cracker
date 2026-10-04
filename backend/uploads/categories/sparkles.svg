@@ -1,17 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+<!-- Sparkles Category Illustration -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <defs>
-    <radialGradient id="grad-sparkles" cx="50%" cy="40%" r="60%">
-      <stop offset="0%" stop-color="#FFD54F" />
-      <stop offset="100%" stop-color="#FF6F00" />
+    <radialGradient id="sparkle-glow" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#FFF9C4" />
+      <stop offset="40%" stop-color="#FFD54F" />
+      <stop offset="100%" stop-color="#FF8F00" stop-opacity="0" />
     </radialGradient>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
-    </filter>
   </defs>
-  <rect width="200" height="200" rx="24" fill="url(#grad-sparkles)" />
-  <g filter="url(#shadow)">
-    <path d="M100,30 L115,75 L160,85 L125,115 L135,160 L95,130 L55,160 L65,115 L30,85 L75,75 Z" fill="#FFE082" />
-             <line x1="100" y1="130" x2="100" y2="190" stroke="#FF8F00" stroke-width="6" stroke-linecap="round" />
+  <circle cx="100" cy="60" r="55" fill="url(#sparkle-glow)" opacity="0.8"/>
+  <!-- Sparkler Sticks in Fan arrangement -->
+  <g stroke-linecap="round">
+    <!-- Center Stick -->
+    <line x1="100" y1="50" x2="100" y2="185" stroke="#9E9E9E" stroke-width="4.5"/>
+    <line x1="100" y1="50" x2="100" y2="115" stroke="#5D4037" stroke-width="6.5"/>
+    <!-- Left Stick 1 -->
+    <line x1="75" y1="55" x2="95" y2="185" stroke="#9E9E9E" stroke-width="4"/>
+    <line x1="75" y1="55" x2="88" y2="120" stroke="#E65100" stroke-width="6"/>
+    <!-- Left Stick 2 -->
+    <line x1="50" y1="68" x2="90" y2="185" stroke="#9E9E9E" stroke-width="4"/>
+    <line x1="50" y1="68" x2="76" y2="130" stroke="#C2185B" stroke-width="6"/>
+    <!-- Right Stick 1 -->
+    <line x1="125" y1="55" x2="105" y2="185" stroke="#9E9E9E" stroke-width="4"/>
+    <line x1="125" y1="55" x2="112" y2="120" stroke="#00897B" stroke-width="6"/>
+    <!-- Right Stick 2 -->
+    <line x1="150" y1="68" x2="110" y2="185" stroke="#9E9E9E" stroke-width="4"/>
+    <line x1="150" y1="68" x2="124" y2="130" stroke="#F57C00" stroke-width="6"/>
   </g>
-  <text x="100" y="185" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" letter-spacing="1">SPARKLES</text>
+  <!-- Bright Sparks at Tips -->
+  <g fill="#FFD700">
+    <polygon points="100,20 104,42 125,46 106,56 112,78 98,62 82,75 92,54 75,44 96,42" fill="#FFFDE7"/>
+    <circle cx="100" cy="46" r="8" fill="#FFEB3B"/>
+    <circle cx="75" cy="52" r="5" fill="#FFF59D"/>
+    <circle cx="125" cy="52" r="5" fill="#FFF59D"/>
+    <circle cx="50" cy="65" r="4" fill="#FFE082"/>
+    <circle cx="150" cy="65" r="4" fill="#FFE082"/>
+    <!-- Radiating spark sparks -->
+    <line x1="100" y1="20" x2="100" y2="8" stroke="#FFD54F" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="120" y1="30" x2="135" y2="20" stroke="#FFCA28" stroke-width="2" stroke-linecap="round"/>
+    <line x1="80" y1="30" x2="65" y2="20" stroke="#FFCA28" stroke-width="2" stroke-linecap="round"/>
+    <line x1="135" y1="55" x2="155" y2="50" stroke="#FFB300" stroke-width="2" stroke-linecap="round"/>
+    <line x1="65" y1="55" x2="45" y2="50" stroke="#FFB300" stroke-width="2" stroke-linecap="round"/>
+  </g>
 </svg>

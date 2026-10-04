@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <linearGradient id="night-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#070913" />
+      <stop offset="60%" stop-color="#0E1626" />
+      <stop offset="100%" stop-color="#1A1C29" />
+    </linearGradient>
+    <radialGradient id="firework-gold" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="25%" stop-color="#FFE082" />
+      <stop offset="60%" stop-color="#FFB300" />
+      <stop offset="100%" stop-color="#FF6F00" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="firework-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="30%" stop-color="#80D8FF" />
+      <stop offset="70%" stop-color="#00B0FF" />
+      <stop offset="100%" stop-color="#0091EA" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="firework-magenta" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="30%" stop-color="#FF80AB" />
+      <stop offset="70%" stop-color="#FF1744" />
+      <stop offset="100%" stop-color="#D50000" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="diya-glow" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FFF9C4" />
+      <stop offset="40%" stop-color="#FFA000" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#E65100" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="1200" height="600" fill="url(#night-sky)" />
+
+  <!-- Stars -->
+  <g fill="#FFF" opacity="0.6">
+    <circle cx="120" cy="80" r="1.5"/><circle cx="280" cy="50" r="1"/><circle cx="450" cy="110" r="1.5"/>
+    <circle cx="680" cy="70" r="1"/><circle cx="890" cy="40" r="1.5"/><circle cx="1050" cy="120" r="1"/>
+    <circle cx="200" cy="190" r="1"/><circle cx="600" cy="180" r="1.5"/><circle cx="950" cy="190" r="1"/>
+  </g>
+
+  <!-- Giant Gold Firework Burst (Center-Right) -->
+  <g transform="translate(850, 160)">
+    <circle cx="0" cy="0" r="120" fill="url(#firework-gold)" opacity="0.35"/>
+    <!-- Burst trails -->
+    <g stroke="#FFD54F" stroke-width="2" stroke-linecap="round" opacity="0.85">
+      <line x1="0" y1="0" x2="0" y2="-110"/>
+      <line x1="0" y1="0" x2="78" y2="-78"/>
+      <line x1="0" y1="0" x2="110" y2="0"/>
+      <line x1="0" y1="0" x2="78" y2="78"/>
+      <line x1="0" y1="0" x2="0" y2="110"/>
+      <line x1="0" y1="0" x2="-78" y2="78"/>
+      <line x1="0" y1="0" x2="-110" y2="0"/>
+      <line x1="0" y1="0" x2="-78" y2="-78"/>
+      <!-- Intermediate rays -->
+      <line x1="0" y1="0" x2="42" y2="-95" stroke="#FFE082" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="95" y2="-42" stroke="#FFE082" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="95" y2="42" stroke="#FFE082" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="42" y2="95" stroke="#FFE082" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="-42" y2="95" stroke="#FFE082" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="-95" y2="42" stroke="#FFE082" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="-95" y2="-42" stroke="#FFE082" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="-42" y2="-95" stroke="#FFE082" stroke-width="1.5"/>
+    </g>
+    <!-- Sparkling tips -->
+    <circle cx="0" cy="-110" r="3" fill="#FFF"/>
+    <circle cx="78" cy="-78" r="3" fill="#FFF"/>
+    <circle cx="110" cy="0" r="3" fill="#FFF"/>
+    <circle cx="78" cy="78" r="3" fill="#FFF"/>
+    <circle cx="0" cy="110" r="3" fill="#FFF"/>
+    <circle cx="-78" cy="78" r="3" fill="#FFF"/>
+    <circle cx="-110" cy="0" r="3" fill="#FFF"/>
+    <circle cx="-78" cy="-78" r="3" fill="#FFF"/>
+    <circle cx="0" cy="0" r="14" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Cyan Firework Burst (Top Left) -->
+  <g transform="translate(320, 110)">
+    <circle cx="0" cy="0" r="80" fill="url(#firework-cyan)" opacity="0.3"/>
+    <g stroke="#00E5FF" stroke-width="1.8" stroke-linecap="round" opacity="0.85">
+      <line x1="0" y1="0" x2="0" y2="-75"/>
+      <line x1="0" y1="0" x2="53" y2="-53"/>
+      <line x1="0" y1="0" x2="75" y2="0"/>
+      <line x1="0" y1="0" x2="53" y2="53"/>
+      <line x1="0" y1="0" x2="0" y2="75"/>
+      <line x1="0" y1="0" x2="-53" y2="53"/>
+      <line x1="0" y1="0" x2="-75" y2="0"/>
+      <line x1="0" y1="0" x2="-53" y2="-53"/>
+    </g>
+    <circle cx="0" cy="0" r="9" fill="#E0F7FA"/>
+  </g>
+
+  <!-- Magenta/Red Firework Burst (Far Right) -->
+  <g transform="translate(1080, 230)">
+    <circle cx="0" cy="0" r="70" fill="url(#firework-magenta)" opacity="0.35"/>
+    <g stroke="#FF4081" stroke-width="1.5" stroke-linecap="round">
+      <line x1="0" y1="0" x2="0" y2="-65"/>
+      <line x1="0" y1="0" x2="46" y2="-46"/>
+      <line x1="0" y1="0" x2="65" y2="0"/>
+      <line x1="0" y1="0" x2="46" y2="46"/>
+      <line x1="0" y1="0" x2="0" y2="65"/>
+      <line x1="0" y1="0" x2="-46" y2="46"/>
+      <line x1="0" y1="0" x2="-65" y2="0"/>
+      <line x1="0" y1="0" x2="-46" y2="-46"/>
+    </g>
+    <circle cx="0" cy="0" r="8" fill="#FF80AB"/>
+  </g>
+
+  <!-- Crackers Display Arrangement (Right Foreground) -->
+  <g transform="translate(720, 310)">
+    <!-- Multi-Shot Comet Box 1 -->
+    <rect x="0" y="70" width="75" height="150" rx="4" fill="#C62828" stroke="#FFD54F" stroke-width="1.5"/>
+    <rect x="6" y="80" width="63" height="40" fill="#FFD54F" rx="2"/>
+    <text x="37" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="12" fill="#B71C1C">MATRIX</text>
+    <text x="37" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10" fill="#FFF">100 SHOTS</text>
+
+    <!-- Comet Box 2 (Blue) -->
+    <rect x="85" y="40" width="80" height="180" rx="4" fill="#1565C0" stroke="#FFE082" stroke-width="1.5"/>
+    <rect x="91" y="55" width="68" height="45" fill="#FFE082" rx="2"/>
+    <text x="125" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="11" fill="#0D47A1">ZODIAC</text>
+    <text x="125" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10" fill="#FFF">120 SHOTS</text>
+
+    <!-- Standing Rocket Sticks -->
+    <g transform="translate(180, 20)">
+      <line x1="10" y1="20" x2="10" y2="200" stroke="#8D6E63" stroke-width="4"/>
+      <polygon points="10,0 20,40 0,40" fill="#FFD600"/>
+      <rect x="2" y="40" width="16" height="55" fill="#D32F2F" rx="2"/>
+      
+      <line x1="30" y1="35" x2="30" y2="200" stroke="#8D6E63" stroke-width="4"/>
+      <polygon points="30,15 40,55 20,55" fill="#00E676"/>
+      <rect x="22" y="55" width="16" height="55" fill="#1565C0" rx="2"/>
+    </g>
+
+    <!-- Flower Pot Giant (Right) -->
+    <g transform="translate(230, 90)">
+      <polygon points="15,130 65,130 50,45 30,45" fill="#BF360C" stroke="#FFB300" stroke-width="1"/>
+      <ellipse cx="40" cy="45" rx="10" ry="3" fill="#FFD54F"/>
+      <!-- Golden sparks spewing -->
+      <polygon points="40,25 43,38 52,38 45,44 48,55 40,48 32,55 35,44 28,38 37,38" fill="#FFFDE7"/>
+    </g>
+
+    <!-- Traditional Red Lari Roll in Front -->
+    <ellipse cx="60" cy="205" rx="55" ry="18" fill="#B71C1C" stroke="#D32F2F" stroke-width="6" stroke-dasharray="10 4"/>
+    <ellipse cx="60" cy="205" rx="30" ry="9" fill="#FF5252"/>
+  </g>
+
+  <!-- Glowing Diyas Along Bottom -->
+  <g transform="translate(0, 520)">
+    <!-- Diya 1 -->
+    <g transform="translate(180, 0)">
+      <circle cx="30" cy="5" r="28" fill="url(#diya-glow)"/>
+      <path d="M10,25 Q30,45 50,25 Q40,32 30,32 Q20,32 10,25 Z" fill="#D84315"/>
+      <ellipse cx="30" cy="25" rx="20" ry="6" fill="#BF360C"/>
+      <!-- Flame -->
+      <path d="M30,5 Q36,18 30,23 Q24,18 30,5 Z" fill="#FFEB3B"/>
+      <circle cx="30" cy="18" r="2.5" fill="#FFF"/>
+    </g>
+
+    <!-- Diya 2 -->
+    <g transform="translate(380, 5)">
+      <circle cx="30" cy="5" r="32" fill="url(#diya-glow)"/>
+      <path d="M10,25 Q30,45 50,25 Q40,32 30,32 Q20,32 10,25 Z" fill="#D84315"/>
+      <ellipse cx="30" cy="25" rx="20" ry="6" fill="#BF360C"/>
+      <path d="M30,5 Q36,18 30,23 Q24,18 30,5 Z" fill="#FFEB3B"/>
+      <circle cx="30" cy="18" r="2.5" fill="#FFF"/>
+    </g>
+
+    <!-- Diya 3 -->
+    <g transform="translate(580, 0)">
+      <circle cx="30" cy="5" r="30" fill="url(#diya-glow)"/>
+      <path d="M10,25 Q30,45 50,25 Q40,32 30,32 Q20,32 10,25 Z" fill="#D84315"/>
+      <ellipse cx="30" cy="25" rx="20" ry="6" fill="#BF360C"/>
+      <path d="M30,5 Q36,18 30,23 Q24,18 30,5 Z" fill="#FFEB3B"/>
+      <circle cx="30" cy="18" r="2.5" fill="#FFF"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="kraft-paper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8D6E63" />
+      <stop offset="50%" stop-color="#6D4C41" />
+      <stop offset="100%" stop-color="#4E342E" />
+    </linearGradient>
+  </defs>
+  <!-- Triangular Tied Kraft Paper Bomb Shell -->
+  <polygon points="100,45 165,160 35,160" fill="url(#kraft-paper)" stroke="#3E2723" stroke-width="3"/>
+  <!-- Yellow / Jute String Bindings -->
+  <line x1="100" y1="45" x2="100" y2="160" stroke="#FFD54F" stroke-width="4"/>
+  <line x1="68" y1="102" x2="165" y2="160" stroke="#FFD54F" stroke-width="3.5"/>
+  <line x1="132" y1="102" x2="35" y2="160" stroke="#FFD54F" stroke-width="3.5"/>
+  <!-- Red Rooster / Evil Dead Badge on front -->
+  <polygon points="100,90 125,135 75,135" fill="#D32F2F"/>
+  <text x="100" y="125" text-anchor="middle" fill="#FFFFFF" font-family="sans-serif" font-size="10" font-weight="900">1 KG</text>
+  <!-- Fuse sticking out from top apex -->
+  <path d="M100,45 Q105,25 120,20" fill="none" stroke="#FF9800" stroke-width="4"/>
+  <circle cx="120" cy="20" r="5" fill="#FFEB3B"/>
+</svg>

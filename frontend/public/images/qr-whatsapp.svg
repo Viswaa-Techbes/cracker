@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <rect width="160" height="160" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <!-- Corner QR position anchors -->
+  <rect x="15" y="15" width="35" height="35" fill="none" stroke="#25D366" stroke-width="4" rx="4"/>
+  <rect x="23" y="23" width="19" height="19" fill="#128C7E" rx="2"/>
+  
+  <rect x="110" y="15" width="35" height="35" fill="none" stroke="#25D366" stroke-width="4" rx="4"/>
+  <rect x="118" y="23" width="19" height="19" fill="#128C7E" rx="2"/>
+  
+  <rect x="15" y="110" width="35" height="35" fill="none" stroke="#25D366" stroke-width="4" rx="4"/>
+  <rect x="23" y="118" width="19" height="19" fill="#128C7E" rx="2"/>
+  
+  <!-- Data dots simulation -->
+  <g fill="#1F2937">
+    <rect x="58" y="18" width="8" height="8" rx="1"/>
+    <rect x="74" y="18" width="8" height="8" rx="1"/>
+    <rect x="90" y="18" width="8" height="8" rx="1"/>
+    <rect x="58" y="34" width="8" height="8" rx="1"/>
+    <rect x="74" y="42" width="16" height="8" rx="1"/>
+    
+    <rect x="18" y="58" width="8" height="8" rx="1"/>
+    <rect x="34" y="58" width="8" height="8" rx="1"/>
+    <rect x="50" y="58" width="8" height="8" rx="1"/>
+    <rect x="66" y="58" width="8" height="8" rx="1"/>
+    <rect x="98" y="58" width="8" height="8" rx="1"/>
+    <rect x="114" y="58" width="8" height="8" rx="1"/>
+    <rect x="130" y="58" width="8" height="8" rx="1"/>
+    
+    <rect x="18" y="74" width="8" height="8" rx="1"/>
+    <rect x="50" y="74" width="8" height="8" rx="1"/>
+    <rect x="66" y="74" width="8" height="8" rx="1"/>
+    <rect x="98" y="74" width="8" height="8" rx="1"/>
+    <rect x="130" y="74" width="8" height="8" rx="1"/>
+    
+    <rect x="18" y="90" width="8" height="8" rx="1"/>
+    <rect x="34" y="90" width="8" height="8" rx="1"/>
+    <rect x="66" y="90" width="8" height="8" rx="1"/>
+    <rect x="114" y="90" width="8" height="8" rx="1"/>
+
+    <rect x="58" y="114" width="8" height="8" rx="1"/>
+    <rect x="74" y="114" width="8" height="8" rx="1"/>
+    <rect x="90" y="114" width="8" height="8" rx="1"/>
+    <rect x="122" y="114" width="16" height="8" rx="1"/>
+    <rect x="58" y="130" width="16" height="8" rx="1"/>
+    <rect x="90" y="130" width="8" height="8" rx="1"/>
+    <rect x="114" y="130" width="8" height="8" rx="1"/>
+  </g>
+
+  <!-- Central WhatsApp badge -->
+  <circle cx="80" cy="80" r="16" fill="#25D366" stroke="#FFFFFF" stroke-width="3"/>
+  <path d="M74,75 C74,72.8 75.8,71 78,71 L82,71 C84.2,71 86,72.8 86,75 L86,81 C86,84.3 83.3,87 80,87 C78.8,87 77.7,86.6 76.7,86 L73,87 L74,83.3 C73.4,82.3 73,81.2 73,80 L73,75" fill="#FFFFFF"/>
+</svg>

@@ -1,92 +1,88 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
-import { Sparkles, ArrowRight, ShieldCheck, Clock, CheckCircle } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, MessageCircle, ShieldCheck, Flame, Sparkles, Building2 } from 'lucide-react';
+import { STORE_CONTACT } from '@/lib/catalogueData';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-amber-500/10 via-slate-50 to-white py-16 md:py-24 border-b border-amber-100">
-      {/* Decorative Sparkle Highlights */}
-      <div className="absolute top-10 left-1/4 w-72 h-72 bg-festive-400/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-festive-600/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative bg-[#070A12] text-white overflow-hidden border-b border-amber-500/20">
+      {/* Background Graphic: Fireworks, Lights & Crackers */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero-fireworks.svg"
+          alt="Diwali Fireworks Background"
+          fill
+          className="object-cover object-center opacity-85"
+          priority
+        />
+        {/* Deep gradient overlay on left for readable contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070A12] via-[#070A12]/80 to-transparent w-full md:w-3/4" />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28 flex flex-col justify-center min-h-[460px] sm:min-h-[520px]">
+        <div className="max-w-2xl space-y-5">
           
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-festive-100 border border-festive-300 text-festive-800 text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-festive-700" />
-            <span>Diwali 2026 Direct Catalogue</span>
+          {/* Subtle Tagline */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold tracking-wider uppercase backdrop-blur-sm">
+            <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
+            <span>Sri Sai Traders • Sivakasi Fireworks</span>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight">
-            Celebrate <span className="bg-gradient-to-r from-festive-700 via-festive-600 to-amber-600 bg-clip-text text-transparent">Brighter</span>
-          </h1>
+          {/* Main Headline */}
+          <div className="space-y-1">
+            <p className="text-xl sm:text-2xl md:text-3xl font-light text-slate-100 tracking-wide">
+              Light Up Your Celebrations
+            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-serif tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-amber-300 to-yellow-500 drop-shadow-md">
+              This Diwali
+            </h1>
+          </div>
 
           {/* Subtitle */}
-          <p className="mt-5 text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed">
-            Explore our complete collection of crackers and festive products.
+          <p className="text-base sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+            Wide Range of Crackers for Every Celebration. Direct wholesale & retail catalogue from the heart of Sivakasi pyrotechnics.
           </p>
 
-          {/* Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* Small Trust/Value Points */}
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-1 text-xs font-bold text-amber-200">
+            <div className="flex items-center gap-1.5">
+              <Building2 className="w-4 h-4 text-amber-400" />
+              <span>Wholesale & Retail</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-amber-400" />
+              <span>All Top Brands</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Flame className="w-4 h-4 text-amber-400" />
+              <span>Events & Functions</span>
+            </div>
+          </div>
+
+          {/* High Contrast CTA Buttons */}
+          <div className="flex flex-wrap items-center gap-4 pt-4">
+            {/* Browse Catalogue (Red) */}
             <Link
               href="/products"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-festive-700 to-festive-600 hover:from-festive-800 hover:to-festive-700 text-white font-bold text-sm shadow-sparkle hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#D32F2F] hover:bg-[#B71C1C] text-white text-sm font-bold shadow-lg shadow-red-900/40 transition-all transform hover:-translate-y-0.5 active:scale-95"
             >
-              <span>Shop Products</span>
+              <span>Browse Catalogue</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
-            <Link
-              href="/#categories"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-bold text-sm shadow-sm transition-all"
+            {/* WhatsApp Enquiry (Green) */}
+            <a
+              href={`https://wa.me/${STORE_CONTACT.whatsappNumber}?text=Hello%20Sri%20Sai%20Traders%2C%20I%20would%20like%20to%20enquire%20about%20your%20cracker%20catalogue.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white text-sm font-bold shadow-lg shadow-emerald-900/30 transition-all transform hover:-translate-y-0.5 active:scale-95"
             >
-              <span>Browse Categories</span>
-            </Link>
-          </div>
-
-          {/* Factual Value Props */}
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
-            <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-amber-50 text-festive-700 flex items-center justify-center shrink-0">
-                <Sparkles className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="text-xs font-bold text-slate-900">Catalogue Variety</h4>
-                <p className="text-[11px] text-slate-500">14 Festive Categories</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
-                <CheckCircle className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="text-xs font-bold text-slate-900">Zero Online Fees</h4>
-                <p className="text-[11px] text-slate-500">Offline Cash / UPI</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="text-xs font-bold text-slate-900">Verified Quality</h4>
-                <p className="text-[11px] text-slate-500">Authentic Sivakasi</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center shrink-0">
-                <Clock className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="text-xs font-bold text-slate-900">Fast Confirmation</h4>
-                <p className="text-[11px] text-slate-500">WhatsApp / Call</p>
-              </div>
-            </div>
+              <MessageCircle className="w-4 h-4" />
+              <span>WhatsApp Enquiry</span>
+            </a>
           </div>
 
         </div>

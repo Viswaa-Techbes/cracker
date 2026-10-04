@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="insta-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFDC80" />
+      <stop offset="25%" stop-color="#F77737" />
+      <stop offset="50%" stop-color="#F56040" />
+      <stop offset="75%" stop-color="#FD1D1D" />
+      <stop offset="100%" stop-color="#833AB4" />
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <!-- Corner QR position anchors -->
+  <rect x="15" y="15" width="35" height="35" fill="none" stroke="url(#insta-grad)" stroke-width="4" rx="4"/>
+  <rect x="23" y="23" width="19" height="19" fill="#E1306C" rx="2"/>
+  
+  <rect x="110" y="15" width="35" height="35" fill="none" stroke="url(#insta-grad)" stroke-width="4" rx="4"/>
+  <rect x="118" y="23" width="19" height="19" fill="#E1306C" rx="2"/>
+  
+  <rect x="15" y="110" width="35" height="35" fill="none" stroke="url(#insta-grad)" stroke-width="4" rx="4"/>
+  <rect x="23" y="118" width="19" height="19" fill="#E1306C" rx="2"/>
+  
+  <!-- Data dots simulation -->
+  <g fill="#1F2937">
+    <rect x="58" y="18" width="8" height="8" rx="1"/>
+    <rect x="74" y="18" width="8" height="8" rx="1"/>
+    <rect x="90" y="18" width="8" height="8" rx="1"/>
+    <rect x="58" y="34" width="8" height="8" rx="1"/>
+    <rect x="74" y="42" width="16" height="8" rx="1"/>
+    
+    <rect x="18" y="58" width="8" height="8" rx="1"/>
+    <rect x="34" y="58" width="8" height="8" rx="1"/>
+    <rect x="50" y="58" width="8" height="8" rx="1"/>
+    <rect x="66" y="58" width="8" height="8" rx="1"/>
+    <rect x="98" y="58" width="8" height="8" rx="1"/>
+    <rect x="114" y="58" width="8" height="8" rx="1"/>
+    <rect x="130" y="58" width="8" height="8" rx="1"/>
+    
+    <rect x="18" y="74" width="8" height="8" rx="1"/>
+    <rect x="50" y="74" width="8" height="8" rx="1"/>
+    <rect x="66" y="74" width="8" height="8" rx="1"/>
+    <rect x="98" y="74" width="8" height="8" rx="1"/>
+    <rect x="130" y="74" width="8" height="8" rx="1"/>
+    
+    <rect x="18" y="90" width="8" height="8" rx="1"/>
+    <rect x="34" y="90" width="8" height="8" rx="1"/>
+    <rect x="66" y="90" width="8" height="8" rx="1"/>
+    <rect x="114" y="90" width="8" height="8" rx="1"/>
+
+    <rect x="58" y="114" width="8" height="8" rx="1"/>
+    <rect x="74" y="114" width="8" height="8" rx="1"/>
+    <rect x="90" y="114" width="8" height="8" rx="1"/>
+    <rect x="122" y="114" width="16" height="8" rx="1"/>
+    <rect x="58" y="130" width="16" height="8" rx="1"/>
+    <rect x="90" y="130" width="8" height="8" rx="1"/>
+    <rect x="114" y="130" width="8" height="8" rx="1"/>
+  </g>
+
+  <!-- Central Instagram Camera Badge -->
+  <rect x="64" y="64" width="32" height="32" rx="8" fill="url(#insta-grad)" stroke="#FFFFFF" stroke-width="2"/>
+  <rect x="70" y="70" width="20" height="20" rx="5" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="80" cy="80" r="4.5" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="86" cy="74" r="1.5" fill="#FFFFFF"/>
+</svg>

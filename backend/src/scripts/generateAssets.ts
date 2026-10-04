@@ -95,6 +95,15 @@ export function ensureImageAssets() {
              <circle cx="120" cy="90" r="30" fill="#FFEB3B" opacity="0.8" />
              <circle cx="100" cy="130" r="30" fill="#00E676" opacity="0.8" />`,
     },
+    'hand-throw': {
+      bg1: '#AD1457',
+      bg2: '#FF4081',
+      title: 'Hand Throw',
+      icon: `<circle cx="80" cy="100" r="22" fill="#E91E63" />
+             <circle cx="120" cy="90" r="18" fill="#FF80AB" />
+             <path d="M70,80 Q50,60 65,45 Q80,60 70,80 Z" fill="#FFEB3B" />
+             <circle cx="100" cy="130" r="14" fill="#FF4081" />`,
+    },
     bomb: {
       bg1: '#37474F',
       bg2: '#78909C',

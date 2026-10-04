@@ -40,27 +40,27 @@ export const CATALOGUE_CATEGORIES: CatalogueCategory[] = [
 
 export const ALL_140_PRODUCTS: CatalogueProduct[] = [
   // Page 2
-  { id: 1, name: '7 CM Valentine Red', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 20, image: '/images/products/sparkles.png', featured: true },
-  { id: 2, name: '7 CM Vivid Green', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 18, image: '/images/products/fancy.png' },
-  { id: 3, name: '7 CM 50-50', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 17, image: '/images/products/roll-caps.png' },
-  { id: 4, name: '12 CM Triton Electric showers', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 piece', price: 32, image: '/images/products/twinkling.png' },
-  { id: 5, name: '12 CM Colour Glitzy', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 53, image: '/images/products/flower-pot.png' },
+  { id: 1, name: '7 CM Valentine Red', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 20, image: '/images/products/7-cm-valentine-red.png', featured: true },
+  { id: 2, name: '7 CM Vivid Green', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 18, image: '/images/products/7-cm-vivid-green.png' },
+  { id: 3, name: '7 CM 50-50', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 17, image: '/images/products/7-cm-50-50.png' },
+  { id: 4, name: '12 CM Triton Electric showers', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 piece', price: 32, image: '/images/products/12-cm-triton-electric-showers.png' },
+  { id: 5, name: '12 CM Colour Glitzy', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 53, image: '/images/products/12-cm-colour-glitzy.png' },
 
   // Page 3
-  { id: 6, name: '12 CM Valentine Red', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 43, image: '/images/products/colour-koti.png' },
-  { id: 7, name: '12 CM Vivid Green', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 36, image: '/images/products/chakkar.png' },
-  { id: 8, name: '15 CM Colour Glitzy', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 53, image: '/images/products/comet.png' },
-  { id: 9, name: '15 CM Vivid Green', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 50, image: '/images/products/crackers.png' },
-  { id: 10, name: '15 CM Triton Electric', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 50, image: '/images/products/holi-colour.png' },
+  { id: 6, name: '12 CM Valentine Red', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 43, image: '/images/products/12-cm-valentine-red.png' },
+  { id: 7, name: '12 CM Vivid Green', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 36, image: '/images/products/12-cm-vivid-green.png' },
+  { id: 8, name: '15 CM Colour Glitzy', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 53, image: '/images/products/15-cm-colour-glitzy.png' },
+  { id: 9, name: '15 CM Vivid Green', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 50, image: '/images/products/15-cm-vivid-green.png' },
+  { id: 10, name: '15 CM Triton Electric', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 50, image: '/images/products/15-cm-triton-electric.png' },
 
   // Page 4
-  { id: 11, name: '30 CM Triton Electric', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 5 pcs', price: 44, image: '/images/products/hand-throw.png' },
-  { id: 12, name: '30 CM Gold Sparkles (Standard Company)', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 5 pcs', price: 95, company: 'Standard Company', image: '/images/products/bomb.png', featured: true },
-  { id: 13, name: '30 CM Crackling Sparkles (Standard Company)', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 5 pcs', price: 100, company: 'Standard Company', image: '/images/products/paper-bomb.png' },
-  { id: 14, name: '30 CM Colour Glitzy', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 5 pcs', price: 47, image: '/images/products/rocket.png' },
+  { id: 11, name: '30 CM Triton Electric', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 5 pcs', price: 44, image: '/images/products/30-cm-triton-electric.png' },
+  { id: 12, name: '30 CM Gold Sparkles (Standard Company)', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 5 pcs', price: 95, company: 'Standard Company', image: '/images/products/30-cm-gold-sparkles-standard-company.png', featured: true },
+  { id: 13, name: '30 CM Crackling Sparkles (Standard Company)', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 5 pcs', price: 100, company: 'Standard Company', image: '/images/products/30-cm-crackling-sparkles-standard-company.png' },
+  { id: 14, name: '30 CM Colour Glitzy', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 5 pcs', price: 47, image: '/images/products/30-cm-colour-glitzy.png' },
 
   // Page 5
-  { id: 15, name: '50 CM Triton Electric', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 5 pcs', price: 220, image: '/images/products/gift-box.png' },
+  { id: 15, name: '50 CM Triton Electric', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 5 pcs', price: 220, image: '/images/products/50-cm-triton-electric.png' },
   { id: 16, name: '4 Colour Torch (Standard Company)', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 10 pcs', price: 250, company: 'Standard Company', image: '/images/products/4-colour-torch-standard-company.png' },
   { id: 17, name: 'Golden Torch', category: 'Sparkles', categorySlug: 'sparkles', packQuantity: '1 Box – 5 pcs', price: 300, image: '/images/products/golden-torch.png' },
 

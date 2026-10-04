@@ -51,46 +51,45 @@ for (const pg of pages) {
   }
 }
 
-// Read catalogueData.ts to extract products
 const catFile = path.join('c:', 'cracker', 'frontend', 'lib', 'catalogueData.ts');
-let catContent = fs.readFileSync(catFile, 'utf8');
+const catContent = fs.readFileSync(catFile, 'utf8');
 
-// Ensure destination directories exist
 const destDir = path.join('c:', 'cracker', 'frontend', 'public', 'images', 'products');
 const backendDestDir = path.join('c:', 'cracker', 'backend', 'uploads', 'products');
 fs.mkdirSync(destDir, { recursive: true });
 fs.mkdirSync(backendDestDir, { recursive: true });
 
-// Match products like: { id: 1, name: '7 CM Valentine Red', ... }
 const lines = catContent.split('\n');
 const newLines = [];
-let currentId = null;
+let inProducts = false;
+let updatedCount = 0;
 
 for (let line of lines) {
-  const m = line.match(/id:\s*(\d+),/);
-  if (m) {
-    currentId = parseInt(m[1], 10);
-    const sourceImg = productImages[currentId - 1];
-    const nameMatch = line.match(/name:\s*'([^']+)'/);
-    if (nameMatch && sourceImg) {
-      const name = nameMatch[1];
-      const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-      const srcPath = path.join('c:', 'cracker', 'extracted_images', sourceImg);
-      const destPath = path.join(destDir, slug + '.png');
-      const backendDestPath = path.join(backendDestDir, slug + '.png');
-      
-      fs.copyFileSync(srcPath, destPath);
-      fs.copyFileSync(srcPath, backendDestPath);
-    }
+  if (line.includes('export const ALL_140_PRODUCTS')) {
+    inProducts = true;
   }
   
-  if (currentId && line.includes("image: '/images/products/")) {
-    const nameLine = lines.find((l) => l.includes(`id: ${currentId},`));
-    const nameMatch = nameLine ? nameLine.match(/name:\s*'([^']+)'/) : null;
-    if (nameMatch) {
+  if (inProducts) {
+    const idMatch = line.match(/id:\s*(\d+),/);
+    const nameMatch = line.match(/name:\s*'([^']+)'/);
+    
+    if (idMatch && nameMatch) {
+      const id = parseInt(idMatch[1], 10);
       const name = nameMatch[1];
       const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-      line = line.replace(/image:\s*'[^']+'/, `image: '/images/products/${slug}.png'`);
+      const sourceImg = productImages[id - 1];
+      
+      if (sourceImg) {
+        const srcPath = path.join('c:', 'cracker', 'extracted_images', sourceImg);
+        const destPath = path.join(destDir, slug + '.png');
+        const backendDestPath = path.join(backendDestDir, slug + '.png');
+        
+        fs.copyFileSync(srcPath, destPath);
+        fs.copyFileSync(srcPath, backendDestPath);
+        
+        line = line.replace(/image:\s*'[^']+'/, `image: '/images/products/${slug}.png'`);
+        updatedCount++;
+      }
     }
   }
   
@@ -98,4 +97,4 @@ for (let line of lines) {
 }
 
 fs.writeFileSync(catFile, newLines.join('\n'), 'utf8');
-console.log('Successfully mapped and updated all 140 products with real images in catalogueData.ts!');
+console.log(`Updated exactly ${updatedCount} products in catalogueData.ts with their real packaging images!`);

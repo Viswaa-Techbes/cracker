@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="pop-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00BCD4" />
+      <stop offset="100%" stop-color="#00838F" />
+    </linearGradient>
+  </defs>
+  <!-- Snap Pop Paper Drops -->
+  <!-- Red Pop Pop -->
+  <circle cx="70" cy="115" r="26" fill="#F44336" stroke="#B71C1C" stroke-width="2"/>
+  <path d="M70,89 Q62,65 72,55 Q78,65 70,89 Z" fill="#FFCDD2" stroke="#E57373" stroke-width="1.5"/>
+  <!-- Blue Pop Pop -->
+  <circle cx="125" cy="125" r="24" fill="url(#pop-blue)" stroke="#006064" stroke-width="2"/>
+  <path d="M125,101 Q118,78 128,70 Q134,80 125,101 Z" fill="#B2EBF2" stroke="#4DD0E1" stroke-width="1.5"/>
+  <!-- Yellow Pop Pop -->
+  <circle cx="100" cy="150" r="22" fill="#FFEB3B" stroke="#F57F17" stroke-width="2"/>
+  <!-- Friction Impact Spark at top -->
+  <polygon points="100,20 105,35 120,38 107,48 111,62 99,52 87,61 92,47 79,37 94,34" fill="#FF5722"/>
+  <circle cx="100" cy="40" r="7" fill="#FFEB3B"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 60" width="140" height="60">
+  <circle cx="28" cy="30" r="20" fill="none" stroke="#0288D1" stroke-width="3"/>
+  <circle cx="28" cy="30" r="14" fill="#E1F5FE"/>
+  <path d="M28,15 L32,26 L43,26 L34,33 L37,44 L28,37 L19,44 L22,33 L13,26 L24,26 Z" fill="#0288D1"/>
+  <text x="56" y="36" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#01579B" letter-spacing="1">STANDARD</text>
+  <text x="56" y="46" font-family="Arial, sans-serif" font-weight="700" font-size="7" fill="#0288D1" letter-spacing="1.5">FIREWORKS</text>
+</svg>

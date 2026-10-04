@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { X, ShoppingBag, Plus, Minus, MessageCircle, ShieldCheck, Check } from 'lucide-react';
+import Link from 'next/link';
+import { X, ShoppingBag, Plus, Minus, MessageCircle, ShieldCheck, Check, ExternalLink } from 'lucide-react';
 import { ProductItem } from './ProductCard';
 import { useCart } from '@/lib/cartContext';
 import { getImageUrl } from '@/lib/api';
@@ -31,6 +32,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
         slug: product.slug,
         image: product.image,
         packQuantity: product.packQuantity,
+        category: product.category,
         price: product.price,
       },
       quantity
@@ -157,9 +159,19 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
               </button>
             </div>
 
-            <div className="flex items-center gap-2 text-[11px] text-slate-500 pt-1">
-              <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>Direct Sivakasi Stock • Offline verification & payment</span>
+            <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1">
+              <div className="flex items-center gap-1.5">
+                <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Direct Sivakasi Stock</span>
+              </div>
+              <Link
+                href={`/products/${product.slug}`}
+                onClick={onClose}
+                className="text-[#D32F2F] hover:underline font-bold flex items-center gap-1"
+              >
+                <span>View Product Page</span>
+                <ExternalLink className="w-3 h-3" />
+              </Link>
             </div>
 
           </div>

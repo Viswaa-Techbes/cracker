@@ -30,7 +30,7 @@ export default function CartItem({ item }: { item: CartItemType }) {
           {item.name}
         </h4>
         <p className="text-[11px] text-slate-500 font-medium">
-          {item.packQuantity} • <span className="text-[#D32F2F] font-bold">Rs.{item.price}/-</span>
+          {item.category ? `${item.category} • ` : ''}{item.packQuantity} • <span className="text-[#D32F2F] font-bold">Rs.{item.price}/-</span>
         </p>
 
         {/* Quantity Modifier */}

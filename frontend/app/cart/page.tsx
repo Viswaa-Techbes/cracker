@@ -171,8 +171,8 @@ export default function CartPage() {
                     <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-snug line-clamp-2">
                       {item.name}
                     </h3>
-                    <p className="text-[11px] text-slate-400 font-medium">
-                      Sparkles / Crackers
+                    <p className="text-[11px] text-amber-700/80 font-bold uppercase tracking-wider">
+                      {item.category || 'Crackers'}
                     </p>
                     <p className="text-[11px] text-slate-600 font-semibold">
                       {item.packQuantity}

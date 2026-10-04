@@ -9,13 +9,14 @@ export interface CartItemType {
   slug: string;
   image: string;
   packQuantity: string;
+  category?: string;
   price: number;
   quantity: number;
 }
 
 interface CartContextType {
   items: CartItemType[];
-  addToCart: (product: { _id: string; name: string; slug: string; image: string; packQuantity: string; price: number }, quantity?: number) => void;
+  addToCart: (product: { _id: string; name: string; slug: string; image: string; packQuantity: string; category?: string; price: number }, quantity?: number) => void;
   removeFromCart: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
@@ -56,7 +57,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   }, [items, isLoaded]);
 
-  const addToCart = (product: { _id: string; name: string; slug: string; image: string; packQuantity: string; price: number }, qtyToAdd = 1) => {
+  const addToCart = (product: { _id: string; name: string; slug: string; image: string; packQuantity: string; category?: string; price: number }, qtyToAdd = 1) => {
     setItems((prev) => {
       const existing = prev.find((item) => item.productId === product._id);
       if (existing) {
@@ -74,6 +75,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
             slug: product.slug,
             image: product.image,
             packQuantity: product.packQuantity,
+            category: product.category,
             price: product.price,
             quantity: Math.max(1, qtyToAdd),
           },

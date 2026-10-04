@@ -44,6 +44,7 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
         slug: product.slug,
         image: product.image,
         packQuantity: product.packQuantity,
+        category: product.category,
         price: product.price,
       },
       1

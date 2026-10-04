@@ -32,7 +32,8 @@ export function generateWhatsAppMessage(
   items.forEach((item, index) => {
     const itemTotal = item.price * item.quantity;
     msg += `${index + 1}. *${item.name}*\n`;
-    msg += `   └ Pack: ${item.packQuantity} | Qty: ${item.quantity} x Rs.${item.price}/- = *Rs.${itemTotal}/-*\n`;
+    const catInfo = item.category ? `Category: ${item.category} | ` : '';
+    msg += `   └ ${catInfo}Pack: ${item.packQuantity} | Qty: ${item.quantity} x Rs.${item.price}/- = *Rs.${itemTotal}/-*\n`;
   });
 
   msg += `${lineSeparator}\n`;

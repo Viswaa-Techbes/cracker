@@ -1,4 +1,4 @@
-﻿$brands = @{
+$brands = @{
   'standard' = @'
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 60" width="140" height="60">
   <circle cx="28" cy="30" r="20" fill="none" stroke="#0288D1" stroke-width="3"/>
@@ -46,7 +46,7 @@ New-Item -ItemType Directory -Force -Path "c:\cracker\frontend\public\images\bra
 
 foreach ($key in $brands.Keys) {
   $content = $brands[$key]
-  [System.IO.File]::WriteAllText("c:\cracker\frontend\public\images\brands\.svg", $content)
+  [System.IO.File]::WriteAllText("c:\cracker\frontend\public\images\brands\$($key).svg", $content)
 }
 
 Write-Output "Brands generated!"

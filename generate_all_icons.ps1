@@ -1,4 +1,4 @@
-﻿$svgs = @{
+$svgs = @{
   'roll-caps' = @'
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <defs>
@@ -338,9 +338,9 @@ New-Item -ItemType Directory -Force -Path "c:\cracker\backend\uploads\categories
 
 foreach ($key in $svgs.Keys) {
   $content = $svgs[$key]
-  [System.IO.File]::WriteAllText("c:\cracker\frontend\public\images\products\.svg", $content)
-  [System.IO.File]::WriteAllText("c:\cracker\frontend\public\images\categories\.svg", $content)
-  [System.IO.File]::WriteAllText("c:\cracker\backend\uploads\categories\.svg", $content)
+  [System.IO.File]::WriteAllText("c:\cracker\frontend\public\images\products\$($key).svg", $content)
+  [System.IO.File]::WriteAllText("c:\cracker\frontend\public\images\categories\$($key).svg", $content)
+  [System.IO.File]::WriteAllText("c:\cracker\backend\uploads\categories\$($key).svg", $content)
 }
 
 # Also ensure sparkles & fancy in categories folder

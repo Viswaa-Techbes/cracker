@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 60" width="140" height="60">
+  <circle cx="28" cy="30" r="18" fill="#FBC02D" stroke="#D32F2F" stroke-width="2.5"/>
+  <path d="M28,16 Q35,26 28,34 Q22,26 28,16 Z" fill="#D32F2F"/>
+  <text x="54" y="34" font-family="Arial, sans-serif" font-weight="900" font-size="13" fill="#D32F2F" letter-spacing="0.5">VADIVEL</text>
+  <text x="54" y="45" font-family="Arial, sans-serif" font-weight="700" font-size="7" fill="#C2185B" letter-spacing="1">PYROTECH</text>
+</svg>

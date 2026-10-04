@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CartDrawer from '@/components/CartDrawer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import FireworksIntro from '@/components/FireworksIntro';
 
 export const metadata: Metadata = {
   title: 'Sri Sai Traders | Dealers in All Types of Crackers Wholesale & Retail',
@@ -42,6 +43,7 @@ export default function RootLayout({
         <ToastProvider>
           <CartProvider>
             <AuthProvider>
+              <FireworksIntro />
               <Navbar />
               <CartDrawer />
               <main className="flex-1">{children}</main>

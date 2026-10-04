@@ -6,25 +6,27 @@ import { AuthProvider } from '@/lib/authContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CartDrawer from '@/components/CartDrawer';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 export const metadata: Metadata = {
-  title: 'Sparkle Crackers | Sivakasi Fireworks Direct Catalogue & Offline Orders',
+  title: 'Sri Sai Traders | Dealers in All Types of Crackers Wholesale & Retail',
   description:
-    'Browse our comprehensive 2026 festive fireworks catalogue from Sivakasi. Authentic sparkles, flower pots, chakkars, aerial comet shots, and gift boxes with transparent offline payment.',
+    'Official Diwali 2026 fireworks catalogue from Sri Sai Traders Sivakasi. 140 products across 15 categories: Sparkles, Flower Pots, Chakkars, Comets, Rockets, and Gift Boxes with direct WhatsApp order enquiries.',
   keywords: [
-    'Sivakasi crackers',
-    'fireworks catalogue',
-    'Diwali crackers 2026',
-    'offline crackers order',
+    'Sri Sai Traders',
+    'Sivakasi crackers wholesale',
+    'crackers catalogue 2026',
+    'Diwali crackers price list',
+    'crackers WhatsApp enquiry',
+    'Standard fireworks',
     'sparklers',
     'flower pots',
     'chakkars',
-    'comet shots',
     'gift boxes',
   ],
   openGraph: {
-    title: 'Sparkle Crackers Sivakasi - Direct Festive Catalogue',
-    description: 'Explore all 14 categories of certified celebration fireworks.',
+    title: 'Sri Sai Traders - Fireworks Wholesale & Retail Catalogue',
+    description: 'Explore 140 Sivakasi cracker products with direct WhatsApp enquiry.',
     type: 'website',
   },
 };
@@ -36,13 +38,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col font-sans antialiased text-slate-800 bg-[#FAFAFA]">
+      <body className="min-h-screen flex flex-col font-sans antialiased text-slate-800 bg-[#F8FAFC]">
         <ToastProvider>
           <CartProvider>
             <AuthProvider>
               <Navbar />
               <CartDrawer />
               <main className="flex-1">{children}</main>
+              <FloatingWhatsApp />
               <Footer />
             </AuthProvider>
           </CartProvider>

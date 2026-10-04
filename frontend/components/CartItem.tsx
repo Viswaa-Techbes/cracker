@@ -4,7 +4,6 @@ import React from 'react';
 import Image from 'next/image';
 import { Plus, Minus, Trash2 } from 'lucide-react';
 import { CartItemType, useCart } from '@/lib/cartContext';
-import { formatCurrency } from '@/lib/utils';
 import { getImageUrl } from '@/lib/api';
 
 export default function CartItem({ item }: { item: CartItemType }) {
@@ -31,12 +30,12 @@ export default function CartItem({ item }: { item: CartItemType }) {
           {item.name}
         </h4>
         <p className="text-[11px] text-slate-500 font-medium">
-          {item.packQuantity} • {formatCurrency(item.price)}
+          {item.packQuantity} • <span className="text-[#D32F2F] font-bold">Rs.{item.price}/-</span>
         </p>
 
         {/* Quantity Modifier */}
         <div className="flex items-center gap-2 mt-2">
-          <div className="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-white">
+          <div className="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-white shadow-2xs">
             <button
               type="button"
               onClick={() => updateQuantity(item.productId, item.quantity - 1)}
@@ -61,7 +60,7 @@ export default function CartItem({ item }: { item: CartItemType }) {
           <button
             type="button"
             onClick={() => removeFromCart(item.productId)}
-            className="p-1 text-slate-400 hover:text-rose-600 transition-colors"
+            className="p-1 text-slate-400 hover:text-red-600 transition-colors"
             title="Remove item"
             aria-label="Remove item"
           >
@@ -73,7 +72,7 @@ export default function CartItem({ item }: { item: CartItemType }) {
       {/* Line Total */}
       <div className="text-right shrink-0">
         <span className="text-xs font-black text-slate-900">
-          {formatCurrency(item.price * item.quantity)}
+          Rs.{item.price * item.quantity}/-
         </span>
       </div>
     </div>

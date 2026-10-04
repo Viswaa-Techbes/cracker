@@ -3,9 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { X, ShoppingBag, ArrowRight, ShieldAlert } from 'lucide-react';
+import { X, ShoppingBag, ArrowRight, MessageCircle } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
-import { formatCurrency } from '@/lib/utils';
 import CartItem from './CartItem';
 
 export default function CartDrawer() {
@@ -14,16 +13,16 @@ export default function CartDrawer() {
 
   if (!isCartOpen) return null;
 
-  const handleProceedToCheckout = () => {
+  const handleProceedToEnquiry = () => {
     closeCart();
-    router.push('/checkout');
+    router.push('/cart');
   };
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
+        className="absolute inset-0 bg-black/60 backdrop-blur-xs transition-opacity"
         onClick={closeCart}
       />
 
@@ -33,16 +32,16 @@ export default function CartDrawer() {
           {/* Header */}
           <div className="p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50">
             <div className="flex items-center gap-2">
-              <ShoppingBag className="w-5 h-5 text-festive-700" />
-              <h2 className="text-base font-extrabold text-slate-900">Your Cart</h2>
-              <span className="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded-full">
+              <ShoppingBag className="w-5 h-5 text-[#D32F2F]" />
+              <h2 className="text-base font-black text-slate-900">Your Enquiry Cart</h2>
+              <span className="text-xs bg-red-100 text-red-800 font-bold px-2 py-0.5 rounded-full">
                 {totalItemsCount} {totalItemsCount === 1 ? 'item' : 'items'}
               </span>
             </div>
             <button
               onClick={closeCart}
               className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-200 transition-colors"
-              aria-label="Close cart"
+              aria-label="Close cart drawer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -55,14 +54,17 @@ export default function CartDrawer() {
                 <div className="w-16 h-16 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mb-4">
                   <ShoppingBag className="w-8 h-8" />
                 </div>
-                <h3 className="text-base font-bold text-slate-800">Your cart is empty</h3>
-                <p className="text-xs text-slate-500 mt-1 max-w-xs">
-                  Browse our Sivakasi fireworks catalogue and add your favourite crackers to begin your offline order.
+                <h3 className="text-base font-black text-slate-800">Your Enquiry Cart is empty</h3>
+                <p className="text-xs text-slate-500 mt-1 max-w-xs font-medium">
+                  Browse our Sri Sai Traders catalogue and add your favourite crackers to send your WhatsApp enquiry.
                 </p>
                 <button
                   type="button"
-                  onClick={closeCart}
-                  className="mt-6 px-6 py-2.5 rounded-full bg-festive-700 text-white font-bold text-xs hover:bg-festive-800 transition-colors"
+                  onClick={() => {
+                    closeCart();
+                    router.push('/products');
+                  }}
+                  className="mt-6 px-6 py-2.5 rounded-full bg-[#D32F2F] text-white font-extrabold text-xs hover:bg-[#B71C1C] transition-colors"
                 >
                   Browse Catalogue
                 </button>
@@ -78,21 +80,13 @@ export default function CartDrawer() {
 
           {/* Footer Summary & Checkout */}
           {items.length > 0 && (
-            <div className="p-5 border-t border-slate-100 bg-slate-50/80 space-y-4">
+            <div className="p-5 border-t border-slate-100 bg-slate-50 space-y-4">
               
-              {/* Offline Payment Disclaimer */}
-              <div className="flex items-start gap-2 p-2.5 rounded-xl bg-amber-50 border border-amber-200/80 text-amber-800 text-[11px] leading-tight">
-                <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-                <span>
-                  <strong>Offline Payment Only:</strong> No online payment gateway. You pay offline upon confirmation or delivery.
-                </span>
-              </div>
-
               {/* Subtotal */}
               <div className="flex items-center justify-between text-sm">
-                <span className="font-bold text-slate-600">Subtotal:</span>
-                <span className="font-black text-xl text-slate-900">
-                  {formatCurrency(subtotal)}
+                <span className="font-bold text-slate-600">Estimated Total:</span>
+                <span className="font-black text-xl text-[#D32F2F]">
+                  Rs.{subtotal.toLocaleString('en-IN')}/-
                 </span>
               </div>
 
@@ -100,27 +94,27 @@ export default function CartDrawer() {
               <div className="grid grid-cols-1 gap-2.5">
                 <button
                   type="button"
-                  onClick={handleProceedToCheckout}
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-festive-700 to-festive-600 hover:from-festive-800 hover:to-festive-700 text-white text-sm font-extrabold shadow-md hover:shadow-sparkle transition-all transform active:scale-95"
+                  onClick={handleProceedToEnquiry}
+                  className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white text-sm font-black shadow-md transition-all active:scale-95"
                 >
-                  <span>Proceed to Order</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Send Enquiry on WhatsApp</span>
                 </button>
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between pt-1">
                   <Link
                     href="/cart"
                     onClick={closeCart}
-                    className="text-xs font-semibold text-slate-600 hover:text-festive-700 underline"
+                    className="text-xs font-bold text-slate-700 hover:text-[#D32F2F] underline"
                   >
                     View Full Cart Page
                   </Link>
                   <button
                     type="button"
                     onClick={closeCart}
-                    className="text-xs font-semibold text-slate-500 hover:text-slate-700"
+                    className="text-xs font-bold text-slate-500 hover:text-slate-700"
                   >
-                    Continue Shopping
+                    + Add More Items
                   </button>
                 </div>
               </div>

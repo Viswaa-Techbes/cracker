@@ -107,7 +107,7 @@ export default function CartPage() {
   return (
     <div className="py-8 sm:py-12 bg-[#F8FAFC] min-h-screen">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Breadcrumb matching reference: Home > Enquiry Cart + Continue Shopping */}
         <div className="flex items-center justify-between gap-4 mb-4">
           <div className="flex items-center gap-2 text-xs font-semibold text-slate-500">
@@ -138,7 +138,7 @@ export default function CartPage() {
 
         {/* Main Cart Card Container */}
         <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden mb-8">
-          
+
           {/* Table Header (Desktop) */}
           <div className="hidden sm:grid grid-cols-12 gap-4 px-6 py-3.5 bg-slate-50 border-b border-slate-200 text-xs font-bold text-slate-600 uppercase tracking-wider">
             <div className="col-span-5">Product</div>

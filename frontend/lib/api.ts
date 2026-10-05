@@ -16,6 +16,8 @@ export interface ApiResponse<T = any> {
   user?: any;
 }
 
+let isBackendReachable: boolean | null = null;
+
 export async function fetchApi<T = any>(
   endpoint: string,
   options: RequestInit = {}
@@ -36,29 +38,34 @@ export async function fetchApi<T = any>(
     headers['Authorization'] = `Bearer ${token}`;
   }
 
-  try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3500);
+  if (isBackendReachable !== false) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 600);
 
-    const res = await fetch(url, {
-      ...options,
-      headers,
-      signal: controller.signal,
-    });
-    clearTimeout(timeoutId);
+      const res = await fetch(url, {
+        ...options,
+        headers,
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
 
-    const contentType = res.headers.get('content-type') || '';
-    if (contentType.includes('application/json')) {
-      const data = await res.json();
-      if (data && data.success && data.data && Array.isArray(data.data) && data.data.length > 0) {
-        return data;
+      const contentType = res.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        const data = await res.json();
+        if (data && data.success && data.data && Array.isArray(data.data) && data.data.length > 0) {
+          isBackendReachable = true;
+          return data;
+        }
+        if (data && data.success && !Array.isArray(data.data) && data.data) {
+          isBackendReachable = true;
+          return data;
+        }
       }
-      if (data && data.success && !Array.isArray(data.data) && data.data) {
-        return data;
-      }
+    } catch {
+      // Backend not running or timeout -> instantly fallback to local 140 products
+      isBackendReachable = false;
     }
-  } catch {
-    // If backend is not running or timeout occurs, fallback gracefully to authoritative 140-product catalogue
   }
 
   // Graceful Fallback Handler for Categories and Products
@@ -208,9 +215,13 @@ export async function fetchApi<T = any>(
 }
 
 export function getImageUrl(imagePath?: string): string {
-  if (!imagePath) return '/images/products/sparkles.svg';
+  if (!imagePath) return '/images/products/sparkles.png';
   if (imagePath.startsWith('http')) return imagePath;
   if (imagePath.startsWith('/images/')) return imagePath;
+  if (imagePath.startsWith('/uploads/products/')) {
+    const filename = imagePath.split('/').pop();
+    return `/images/products/${filename}`;
+  }
   if (imagePath.startsWith('/uploads/categories/')) {
     const filename = imagePath.split('/').pop();
     return `/images/categories/${filename}`;

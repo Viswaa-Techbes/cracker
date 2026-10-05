@@ -44,6 +44,7 @@ export interface IOrder extends Document {
   items: IOrderItem[];
   subtotal: number;
   deliveryFee: number;
+  transportationCharge?: number;
   totalAmount: number;
   orderType: OrderType;
   deliveryAddress: {
@@ -159,6 +160,11 @@ const OrderSchema = new Schema<IOrder>(
       min: 0,
     },
     deliveryFee: {
+      type: Number,
+      default: 0,
+      min: 0,
+    },
+    transportationCharge: {
       type: Number,
       default: 0,
       min: 0,

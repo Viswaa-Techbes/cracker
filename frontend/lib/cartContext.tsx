@@ -22,6 +22,9 @@ interface CartContextType {
   clearCart: () => void;
   totalItemsCount: number;
   subtotal: number;
+  transportationCharge: number;
+  setTransportationCharge: (charge: number) => void;
+  grandTotal: number;
   isCartOpen: boolean;
   openCart: () => void;
   closeCart: () => void;
@@ -32,19 +35,27 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItemType[]>([]);
+  const [transportationCharge, setTransportationChargeState] = useState<number>(0);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const { showToast } = useToast();
 
-  // Load cart from LocalStorage on mount
+  // Load cart and transportation charge from LocalStorage on mount
   useEffect(() => {
     try {
       const stored = localStorage.getItem('cracker_cart');
       if (stored) {
         setItems(JSON.parse(stored));
       }
+      const storedCharge = localStorage.getItem('cracker_transport_charge');
+      if (storedCharge !== null) {
+        const parsed = parseFloat(storedCharge);
+        if (!isNaN(parsed) && parsed >= 0) {
+          setTransportationChargeState(parsed);
+        }
+      }
     } catch (e) {
-      console.error('Failed to parse cart from storage:', e);
+      console.error('Failed to parse cart/transport charge from storage:', e);
     } finally {
       setIsLoaded(true);
     }
@@ -110,13 +121,24 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const clearCart = () => {
     setItems([]);
+    setTransportationCharge(0);
     if (typeof window !== 'undefined') {
       localStorage.removeItem('cracker_cart');
+      localStorage.removeItem('cracker_transport_charge');
+    }
+  };
+
+  const setTransportationCharge = (charge: number) => {
+    const valid = Math.max(0, isNaN(charge) ? 0 : charge);
+    setTransportationChargeState(valid);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('cracker_transport_charge', valid.toString());
     }
   };
 
   const totalItemsCount = items.reduce((sum, item) => sum + item.quantity, 0);
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const grandTotal = subtotal + transportationCharge;
 
   const openCart = () => setIsCartOpen(true);
   const closeCart = () => setIsCartOpen(false);
@@ -132,6 +154,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
         clearCart,
         totalItemsCount,
         subtotal,
+        transportationCharge,
+        setTransportationCharge,
+        grandTotal,
         isCartOpen,
         openCart,
         closeCart,

@@ -198,14 +198,24 @@ export default function Footer() {
 
       {/* Copyright Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
-        <p>© 2026 Sri Sai Traders. All Rights Reserved.</p>
+        <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-center sm:text-left">
+          <span>© 2026 Sri Sai Traders. All Rights Reserved.</span>
+          <span className="hidden sm:inline text-slate-600">•</span>
+          <span>
+            Developed by{' '}
+            <a
+              href="https://techbes.co.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-400 hover:text-amber-300 font-semibold underline underline-offset-2 transition-colors"
+            >
+              TechBes
+            </a>
+          </span>
+        </div>
         <div className="flex items-center gap-4 text-[11px]">
           <Link href="/safety" className="hover:text-amber-300 transition-colors">
             Safety Precautions
-          </Link>
-          <span>•</span>
-          <Link href="/admin/login" className="hover:text-amber-300 transition-colors">
-            Admin Portal
           </Link>
         </div>
       </div>

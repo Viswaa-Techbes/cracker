@@ -20,7 +20,7 @@ export function generateWhatsAppOrderMessage(
 *Items Ordered:*
 ${itemsText}
 *Subtotal:* ₹${order.subtotal}
-${order.deliveryFee > 0 ? `*Delivery Fee:* ₹${order.deliveryFee}\n` : ''}*Total Amount:* ₹${order.totalAmount}
+${((order.transportationCharge || order.deliveryFee) > 0) ? `*Transportation Charges:* ₹${order.transportationCharge || order.deliveryFee}\n` : ''}*Grand Total:* ₹${order.totalAmount}
 *Order Type:* ${order.orderType}
 *Payment Status:* ${order.paymentStatus} (Offline)
 *Delivery Address:* ${order.deliveryAddress.address}, ${order.deliveryAddress.city} - ${order.deliveryAddress.pincode}

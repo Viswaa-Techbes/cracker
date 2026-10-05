@@ -18,6 +18,8 @@ export interface CreateOrderInput {
   orderType: 'PICKUP' | 'DELIVERY';
   preferredDate?: string;
   customerNotes?: string;
+  transportationCharge?: number;
+  deliveryFee?: number;
   items: {
     productId: string;
     quantity: number;
@@ -95,9 +97,13 @@ export class OrderService {
       };
     });
 
-    // 4. Calculate delivery fee
+    // 4. Calculate transportation / delivery fee
     let deliveryFee = 0;
-    if (input.orderType === 'DELIVERY') {
+    if (input.transportationCharge !== undefined && input.transportationCharge !== null) {
+      deliveryFee = Math.max(0, Number(input.transportationCharge));
+    } else if (input.deliveryFee !== undefined && input.deliveryFee !== null) {
+      deliveryFee = Math.max(0, Number(input.deliveryFee));
+    } else if (input.orderType === 'DELIVERY') {
       if (subtotal < settings.freeDeliveryThreshold) {
         deliveryFee = settings.deliveryFee;
       }
@@ -156,6 +162,7 @@ export class OrderService {
       items: orderItems,
       subtotal,
       deliveryFee,
+      transportationCharge: deliveryFee,
       totalAmount,
       orderType: input.orderType,
       deliveryAddress: {

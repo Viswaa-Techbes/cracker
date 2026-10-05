@@ -25,6 +25,8 @@ export const createOrderSchema = z.object({
   orderType: z.enum(['PICKUP', 'DELIVERY']).default('DELIVERY'),
   preferredDate: z.string().optional().default(''),
   customerNotes: z.string().optional().default(''),
+  transportationCharge: z.number().min(0, 'Transportation charge cannot be negative').optional().default(0),
+  deliveryFee: z.number().min(0).optional().default(0),
   items: z
     .array(createOrderItemSchema)
     .min(1, 'Order must contain at least one product item'),

@@ -196,27 +196,27 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Copyright Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
-        <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-center sm:text-left">
-          <span>© 2026 Sri Sai Traders. All Rights Reserved.</span>
-          <span className="hidden sm:inline text-slate-600">•</span>
-          <span>
+      {/* Copyright & Developer Credit Bar */}
+      <div className="border-t border-slate-800/80 bg-[#060810]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col items-center justify-center text-center text-xs text-slate-400 gap-1.5">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            <span>© 2026 Sri Sai Traders. All Rights Reserved.</span>
+            <span className="text-slate-600">•</span>
+            <Link href="/safety" className="hover:text-amber-300 transition-colors text-[11px]">
+              Safety Precautions
+            </Link>
+          </div>
+          <p className="text-[11px] text-slate-500">
             Developed by{' '}
             <a
               href="https://techbes.co.in/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-amber-400 hover:text-amber-300 font-semibold underline underline-offset-2 transition-colors"
+              className="text-slate-400 hover:text-amber-400 font-medium transition-colors hover:underline underline-offset-2"
             >
               TechBes
             </a>
-          </span>
-        </div>
-        <div className="flex items-center gap-4 text-[11px]">
-          <Link href="/safety" className="hover:text-amber-300 transition-colors">
-            Safety Precautions
-          </Link>
+          </p>
         </div>
       </div>
     </footer>

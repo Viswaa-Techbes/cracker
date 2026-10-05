@@ -147,28 +147,20 @@ export default function CartPage() {
     if (trimmed === '') {
       setTransportationCharge(0);
       setTransportError('');
-      showToast('Transportation charge set to ₹0', 'info');
+      showToast('Transportation amount set to ₹0', 'info');
       return;
     }
 
     const num = Number(trimmed);
     if (isNaN(num) || num < 0) {
       setTransportError('Please enter a valid positive number or zero');
-      showToast('Invalid transportation charge', 'error');
+      showToast('Invalid transportation amount', 'error');
       return;
     }
 
     setTransportError('');
     setTransportationCharge(num);
-    showToast(`Applied ₹${num.toLocaleString('en-IN')} transportation charge`, 'success');
-  };
-
-  // Quick Preset Selection
-  const handleSelectPreset = (amount: number) => {
-    setTransportInput(amount.toString());
-    setTransportError('');
-    setTransportationCharge(amount);
-    showToast(`Transportation set to ₹${amount.toLocaleString('en-IN')}`, 'info');
+    showToast(`Applied ₹${num.toLocaleString('en-IN')} transportation amount`, 'success');
   };
 
   // Step 1 Validation -> Proceed to Step 2
@@ -853,25 +845,20 @@ export default function CartPage() {
               </div>
             </div>
 
-            {/* C. TRANSPORTATION CHARGES SECTION (REQUIRED) */}
-            <div className="bg-white rounded-2xl border-2 border-amber-300/80 shadow-md p-6 sm:p-7 relative overflow-hidden bg-gradient-to-br from-amber-50/30 to-white">
-              <div className="flex items-center gap-2.5 mb-2">
-                <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center">
-                  <Truck className="w-4 h-4 text-amber-700" />
-                </div>
-                <div>
-                  <h3 className="text-base font-black text-slate-900">
-                    Transportation Charges
-                  </h3>
-                  <p className="text-xs text-slate-500 font-medium">
-                    Additional transportation / delivery charges applicable for your location.
-                  </p>
-                </div>
+            {/* C. TRANSPORTATION SECTION (SIMPLIFIED) */}
+            <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-7">
+              <div className="mb-4">
+                <h3 className="text-base sm:text-lg font-black text-slate-900">
+                  Transportation
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-500 font-medium mt-1">
+                  An additional transportation charge may apply based on the delivery location.
+                </p>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-amber-200/60">
-                <label className="text-xs font-bold text-slate-800 block mb-1.5">
-                  Transportation / Delivery Charge (₹)
+              <div className="pt-3 border-t border-slate-100">
+                <label className="text-xs font-bold text-slate-700 block mb-1.5">
+                  Transportation Additional Amount (₹)
                 </label>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
@@ -882,14 +869,14 @@ export default function CartPage() {
                     <input
                       type="number"
                       min={0}
-                      step={10}
+                      step={50}
                       placeholder="0"
                       value={transportInput}
                       onChange={(e) => handleTransportInputChange(e.target.value)}
-                      className={`w-full pl-8 pr-4 py-2.5 rounded-xl border bg-white text-slate-900 font-black text-base focus:outline-none focus:ring-2 transition-all ${
+                      className={`w-full pl-8 pr-4 py-2.5 rounded-xl border bg-white text-slate-900 font-bold text-base focus:outline-none focus:ring-2 transition-all ${
                         transportError
                           ? 'border-red-500 focus:ring-red-400'
-                          : 'border-slate-300 focus:border-amber-500 focus:ring-amber-400/50'
+                          : 'border-slate-300 focus:border-red-500 focus:ring-red-500/20'
                       }`}
                     />
                   </div>
@@ -897,20 +884,10 @@ export default function CartPage() {
                   <button
                     type="button"
                     onClick={handleApplyTransport}
-                    className="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-sm transition-colors cursor-pointer"
+                    className="px-6 py-2.5 rounded-xl bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold text-xs sm:text-sm shadow-sm transition-colors cursor-pointer"
                   >
                     Apply
                   </button>
-
-                  {transportationCharge > 0 && (
-                    <button
-                      type="button"
-                      onClick={() => handleSelectPreset(0)}
-                      className="px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-slate-600 font-semibold text-xs transition-colors cursor-pointer"
-                    >
-                      Reset to ₹0
-                    </button>
-                  )}
                 </div>
 
                 {/* Validation Error Message */}
@@ -920,59 +897,10 @@ export default function CartPage() {
                     <span>{transportError}</span>
                   </p>
                 )}
-
-                {/* Quick Presets for convenience */}
-                <div className="mt-4 flex flex-wrap items-center gap-2">
-                  <span className="text-[11px] text-slate-500 font-bold">Quick Select:</span>
-                  <button
-                    type="button"
-                    onClick={() => handleSelectPreset(0)}
-                    className={`text-xs px-3 py-1 rounded-lg border font-bold transition-all cursor-pointer ${
-                      transportationCharge === 0
-                        ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
-                        : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
-                    }`}
-                  >
-                    ₹0 (Store Pickup / Local)
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleSelectPreset(100)}
-                    className={`text-xs px-3 py-1 rounded-lg border font-bold transition-all cursor-pointer ${
-                      transportationCharge === 100
-                        ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
-                        : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
-                    }`}
-                  >
-                    ₹100 (Nearby District)
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleSelectPreset(250)}
-                    className={`text-xs px-3 py-1 rounded-lg border font-bold transition-all cursor-pointer ${
-                      transportationCharge === 250
-                        ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
-                        : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
-                    }`}
-                  >
-                    ₹250 (Regional Parcel)
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleSelectPreset(500)}
-                    className={`text-xs px-3 py-1 rounded-lg border font-bold transition-all cursor-pointer ${
-                      transportationCharge === 500
-                        ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
-                        : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
-                    }`}
-                  >
-                    ₹500 (Heavy/Outstation)
-                  </button>
-                </div>
               </div>
             </div>
 
-            {/* D. PRICE SUMMARY SECTION (REQUIRED) */}
+            {/* D. PRICE SUMMARY SECTION */}
             <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-7 space-y-3">
               <div className="border-b border-slate-100 pb-3">
                 <h3 className="text-sm font-black text-slate-900 uppercase tracking-wider">
@@ -982,25 +910,14 @@ export default function CartPage() {
 
               <div className="space-y-2 text-xs sm:text-sm">
                 <div className="flex items-center justify-between text-slate-600">
-                  <span className="font-semibold">Service/Product Subtotal</span>
+                  <span className="font-semibold">Subtotal</span>
                   <span className="font-bold text-slate-900">
                     Rs.{subtotal.toLocaleString('en-IN')}/-
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between text-slate-600">
-                  <span className="font-semibold flex items-center gap-1.5">
-                    <span>Transportation Charges</span>
-                    {transportationCharge > 0 ? (
-                      <span className="text-[10px] text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded font-bold">
-                        Applied
-                      </span>
-                    ) : (
-                      <span className="text-[10px] text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded font-bold">
-                        Included / ₹0
-                      </span>
-                    )}
-                  </span>
+                  <span className="font-semibold">Transportation</span>
                   <span className="font-bold text-slate-900">
                     Rs.{transportationCharge.toLocaleString('en-IN')}/-
                   </span>

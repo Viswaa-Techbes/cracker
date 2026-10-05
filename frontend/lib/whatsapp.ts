@@ -54,9 +54,7 @@ export function generateWhatsAppMessage(
   msg += `${lineSeparator}\n`;
   msg += `📊 *PRICE BREAKDOWN:*\n`;
   msg += `• *Subtotal:* Rs.${subtotal.toLocaleString('en-IN')}/-\n`;
-  if (transportationCharge > 0) {
-    msg += `• *Transportation Charges:* Rs.${transportationCharge.toLocaleString('en-IN')}/-\n`;
-  }
+  msg += `• *Transportation:* Rs.${transportationCharge.toLocaleString('en-IN')}/-\n`;
   msg += `💰 *GRAND TOTAL:* *Rs.${grandTotal.toLocaleString('en-IN')}/-*\n`;
   msg += `${lineSeparator}\n\n`;
 

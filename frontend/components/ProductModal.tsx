@@ -144,8 +144,8 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                 <ShoppingBag className="w-4 h-4" />
                 <span>
                   {cartItem
-                    ? `Add ${quantity} More (Already ${cartItem.quantity} in Cart)`
-                    : `Add ${quantity} to Enquiry Cart`}
+                    ? `Add ${quantity} More (Already in Enquiry List: ${cartItem.quantity})`
+                    : `Add ${quantity} to Enquiry List`}
                 </span>
               </button>
 

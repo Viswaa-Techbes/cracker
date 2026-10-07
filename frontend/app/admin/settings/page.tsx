@@ -27,7 +27,8 @@ export default function AdminSettingsPage() {
     deliveryFee: 150,
     allowedPincodes: '',
     bannerNotice: '',
-    legalDisclaimer: '',
+    legalDisclaimer:
+      'As per No.R4(2)83/CC 405/2023 compliance of Directives of honourable Supreme Court of India in WP (C) 728 of 2015 - Reg, we don’t sell any sort of crackers or any related activities with relevant to purchases. The catalog is just to view the products and understand.',
   });
 
   useEffect(() => {

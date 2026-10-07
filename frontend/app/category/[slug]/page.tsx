@@ -9,6 +9,7 @@ import { fetchApi, getImageUrl } from '@/lib/api';
 import ProductGrid from '@/components/ProductGrid';
 import { ProductItem } from '@/components/ProductCard';
 import { CATALOGUE_CATEGORIES } from '@/lib/catalogueData';
+import LegalDisclaimerBanner from '@/components/LegalDisclaimerBanner';
 
 export default function CategoryPage() {
   const params = useParams();
@@ -74,6 +75,11 @@ export default function CategoryPage() {
             {category ? category.name : slug}
           </span>
         </nav>
+
+        {/* Legal Compliance Disclaimer Banner */}
+        <div className="mb-6">
+          <LegalDisclaimerBanner variant="card" />
+        </div>
 
         {/* Category Header Banner */}
         <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 mb-10 shadow-sm flex flex-col md:flex-row items-center gap-6 sm:gap-8">

@@ -83,7 +83,7 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
           {isInCart && (
             <span className="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
               <Check className="w-3 h-3" />
-              <span>{cartItem.quantity} in cart</span>
+              <span>{cartItem.quantity} in enquiry</span>
             </span>
           )}
         </div>
@@ -111,7 +111,7 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
             Rs.{product.price}/-
           </span>
           <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
-            Wholesale / Retail
+            Catalogue Specification
           </span>
         </div>
 
@@ -125,7 +125,7 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
           }`}
         >
           <ShoppingBag className="w-4 h-4" />
-          <span>{isInCart ? `Add More (${cartItem.quantity})` : 'Add to Enquiry'}</span>
+          <span>{isInCart ? `Add More (${cartItem.quantity})` : 'Add to Enquiry List'}</span>
         </button>
       </div>
     </div>

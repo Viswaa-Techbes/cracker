@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, MessageCircle, Sparkles } from 'lucide-react';
 import { useToast } from '@/lib/toastContext';
 import { STORE_CONTACT } from '@/lib/catalogueData';
+import LegalDisclaimerBanner from '@/components/LegalDisclaimerBanner';
 
 export default function ContactPage() {
   const { showToast } = useToast();
@@ -51,6 +52,9 @@ export default function ContactPage() {
             Wholesale & Retail enquiries, bulk festival supply, or questions about our cracker catalogue.
           </p>
         </div>
+
+        {/* Legal Compliance Disclaimer Banner */}
+        <LegalDisclaimerBanner variant="card" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           

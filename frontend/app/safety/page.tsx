@@ -12,11 +12,12 @@ import {
   MessageCircle,
 } from 'lucide-react';
 import { STORE_CONTACT } from '@/lib/catalogueData';
+import LegalDisclaimerBanner from '@/components/LegalDisclaimerBanner';
 
 export const metadata = {
   title: 'Safety Guidelines & Legal Compliance | Sri Sai Traders Sivakasi',
   description:
-    'Dedicated pyrotechnic safety, transport regulations, PESO compliance, and offline purchase terms for fireworks.',
+    'Dedicated pyrotechnic safety, transport regulations, PESO compliance, and offline enquiry policies for fireworks.',
 };
 
 export default function SafetyPage() {
@@ -43,9 +44,12 @@ export default function SafetyPage() {
             Safety & Legal Regulations
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium">
-            Please read our essential safety guidelines, transport limitations, and offline ordering policies before purchasing or handling any pyrotechnic fireworks products.
+            Please read our essential safety guidelines, transport limitations, and compliance policies regarding pyrotechnic fireworks products.
           </p>
         </div>
+
+        {/* Official Legal Compliance Disclaimer Banner */}
+        <LegalDisclaimerBanner variant="card" />
 
         {/* Primary Legal Disclosures Card */}
         <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-sm space-y-6">

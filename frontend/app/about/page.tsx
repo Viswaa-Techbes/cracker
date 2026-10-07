@@ -12,6 +12,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { STORE_CONTACT } from '@/lib/catalogueData';
+import LegalDisclaimerBanner from '@/components/LegalDisclaimerBanner';
 
 export const metadata = {
   title: 'About Sri Sai Traders | Wholesale & Retail Sivakasi Fireworks',
@@ -22,7 +23,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="py-12 sm:py-16 bg-[#F8FAFC] min-h-screen">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-semibold text-slate-500">
@@ -32,6 +33,9 @@ export default function AboutPage() {
           <span>&gt;</span>
           <span className="text-slate-900 font-bold">About Us</span>
         </nav>
+
+        {/* Legal Compliance Disclaimer Banner */}
+        <LegalDisclaimerBanner variant="card" />
 
         {/* Hero Banner Card */}
         <div className="bg-[#090D1A] text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-amber-500/20 shadow-xl">

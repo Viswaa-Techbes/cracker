@@ -14,6 +14,7 @@ import {
   Flame,
 } from 'lucide-react';
 import Hero from '@/components/Hero';
+import LegalDisclaimerBanner from '@/components/LegalDisclaimerBanner';
 import BrandTrustStrip from '@/components/BrandTrustStrip';
 import CategoryGrid from '@/components/CategoryGrid';
 import ProductGrid from '@/components/ProductGrid';
@@ -45,6 +46,13 @@ export default function HomePage() {
     <div className="bg-[#F8FAFC]">
       {/* 1. Hero Section: Diwali Fireworks & Sri Sai Traders Headline */}
       <Hero />
+
+      {/* Official Legal Compliance Disclaimer Banner (Prominently below Hero) */}
+      <section className="bg-amber-100/40 border-b border-amber-300/80 py-4 sm:py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <LegalDisclaimerBanner variant="card" />
+        </div>
+      </section>
 
       {/* 2. Brand & Trust Strip: Standard, Sony, Ajanta, Vadivel, 365 Days */}
       <BrandTrustStrip />
@@ -116,9 +124,9 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-xl bg-red-50 text-[#D32F2F] flex items-center justify-center mb-4">
                 <Building2 className="w-6 h-6" />
               </div>
-              <h3 className="text-sm font-extrabold text-slate-900">Wholesale & Retail</h3>
+              <h3 className="text-sm font-extrabold text-slate-900">Wholesale & Retail Catalogue</h3>
               <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                Enjoy wholesale direct pricing whether you are ordering small family packages or massive bulk consignments.
+                Browse Sivakasi pyrotechnic specifications transparently for family celebrations or event requirements.
               </p>
             </div>
 
@@ -138,7 +146,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-sm font-extrabold text-slate-900">Quick WhatsApp Enquiry</h3>
               <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                Select your items, tap send enquiry, and receive immediate availability and bill confirmation on WhatsApp.
+                Select your items, tap send enquiry, and receive immediate product information and availability on WhatsApp.
               </p>
             </div>
 
@@ -161,18 +169,18 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center md:text-left">
             <span className="text-xs font-bold text-amber-300 uppercase tracking-wider">
-              Have Custom Requirements or Bulk Orders?
+              Have Custom Requirements or Bulk Enquiries?
             </span>
             <h3 className="text-xl sm:text-2xl font-black text-white">
               Connect Directly with Sri Sai Traders on WhatsApp
             </h3>
             <p className="text-xs text-slate-300 max-w-xl">
-              Share your order list or function requirements. Our team in Kagganur will respond with current stock, packaging details, and pricing.
+              Share your enquiry list or function requirements. Our team in Kagganur will respond with product information, packaging details, and specifications.
             </p>
           </div>
 
           <a
-            href={`https://wa.me/${STORE_CONTACT.whatsappNumber}?text=Hello%20Sri%20Sai%20Traders%2C%20I%20have%20an%20enquiry%20for%20bulk%20crackers%20order.`}
+            href={`https://wa.me/${STORE_CONTACT.whatsappNumber}?text=Hello%20Sri%20Sai%20Traders%2C%20I%20have%20an%20enquiry%20regarding%20your%20cracker%20catalogue.`}
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-extrabold text-sm shadow-lg shadow-emerald-950/40 transition-all transform hover:scale-105 active:scale-95"

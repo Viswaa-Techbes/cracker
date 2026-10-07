@@ -10,6 +10,7 @@ import {
   Zap,
   Tag,
   PartyPopper,
+  AlertTriangle,
 } from 'lucide-react';
 import { STORE_CONTACT } from '@/lib/catalogueData';
 
@@ -196,8 +197,19 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Official Legal Compliance Notice Strip */}
+      <div className="bg-[#060810] border-t border-amber-500/20 py-4 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto flex items-start sm:items-center gap-3 text-xs text-amber-200/90 bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 sm:p-4">
+          <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5 sm:mt-0" />
+          <p className="leading-relaxed font-medium">
+            <strong className="text-amber-300 font-extrabold uppercase mr-1.5">Legal Disclaimer:</strong>
+            As per No.R4(2)83/CC 405/2023 compliance of Directives of honourable Supreme Court of India in WP (C) 728 of 2015 - Reg, we don’t sell any sort of crackers or any related activities with relevant to purchases. The catalog is just to view the products and understand.
+          </p>
+        </div>
+      </div>
+
       {/* Copyright Bar */}
-      <div className="border-t border-slate-800/80 bg-[#060810]">
+      <div className="border-t border-slate-800/80 bg-[#04060B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-center text-center text-xs text-slate-400">
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
             <span>© 2026 Sri Sai Traders. All Rights Reserved.</span>

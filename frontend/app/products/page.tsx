@@ -15,6 +15,7 @@ import ProductGrid from '@/components/ProductGrid';
 import { ProductItem } from '@/components/ProductCard';
 import { fetchApi } from '@/lib/api';
 import { CATALOGUE_CATEGORIES, ALL_140_PRODUCTS } from '@/lib/catalogueData';
+import LegalDisclaimerBanner from '@/components/LegalDisclaimerBanner';
 
 function ProductsCatalogueContent() {
   const searchParams = useSearchParams();
@@ -165,6 +166,11 @@ function ProductsCatalogueContent() {
           )}
         </nav>
 
+        {/* Official Legal Compliance Disclaimer Banner */}
+        <div className="mb-6">
+          <LegalDisclaimerBanner variant="card" />
+        </div>
+
         {/* Page Heading & Sort Bar */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 pb-4 border-b border-slate-200">
           <div>
@@ -172,7 +178,7 @@ function ProductsCatalogueContent() {
               Product Catalogue
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 mt-1 font-medium">
-              Explore our complete range of crackers. Add items to enquiry and send via WhatsApp.
+              This catalogue is provided strictly for viewing and understanding the available products. Add items to your enquiry list to enquire via WhatsApp.
             </p>
           </div>
 
@@ -318,8 +324,8 @@ function ProductsCatalogueContent() {
 
             {/* Wholesale & Retail Info note */}
             <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] text-slate-500 space-y-1 leading-snug">
-              <p className="font-bold text-slate-800">Direct From Sivakasi</p>
-              <p>Prices listed are standard wholesale & retail catalogue rates. Final billing and stock verified on WhatsApp.</p>
+              <p className="font-bold text-slate-800">Catalogue Reference Only</p>
+              <p>Prices and details are listed to view and understand available products. Stock queries are handled directly via WhatsApp.</p>
             </div>
           </aside>
 

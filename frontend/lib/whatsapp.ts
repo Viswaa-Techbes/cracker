@@ -20,11 +20,11 @@ export function generateWhatsAppMessage(
   const lineSeparator = '------------------------------------------';
   const grandTotal = subtotal + transportationCharge;
 
-  let msg = `✨ *SRI SAI TRADERS - CRACKER ENQUIRY & BOOKING* ✨\n`;
+  let msg = `✨ *SRI SAI TRADERS - PRODUCT CATALOGUE ENQUIRY* ✨\n`;
   msg += `${STORE_CONTACT.subtitle}\n`;
   msg += `${lineSeparator}\n\n`;
 
-  msg += `👤 *CUSTOMER & BOOKING DETAILS:*\n`;
+  msg += `👤 *CUSTOMER & CONTACT DETAILS:*\n`;
   msg += `• *Name:* ${details.name.trim()}\n`;
   msg += `• *Mobile:* ${details.mobile.trim()}\n`;
   const fullAddress = [
@@ -43,7 +43,7 @@ export function generateWhatsAppMessage(
   }
   msg += `\n${lineSeparator}\n`;
 
-  msg += `📦 *BOOKED PRODUCTS (${items.length} Items):*\n`;
+  msg += `📦 *ENQUIRY PRODUCTS (${items.length} Items):*\n`;
   items.forEach((item, index) => {
     const itemTotal = item.price * item.quantity;
     msg += `${index + 1}. *${item.name}*\n`;
@@ -52,13 +52,14 @@ export function generateWhatsAppMessage(
   });
 
   msg += `${lineSeparator}\n`;
-  msg += `📊 *PRICE BREAKDOWN:*\n`;
+  msg += `📊 *ESTIMATED PRICE BREAKDOWN:*\n`;
   msg += `• *Subtotal:* Rs.${subtotal.toLocaleString('en-IN')}/-\n`;
   msg += `• *Transportation:* Rs.${transportationCharge.toLocaleString('en-IN')}/-\n`;
-  msg += `💰 *GRAND TOTAL:* *Rs.${grandTotal.toLocaleString('en-IN')}/-*\n`;
+  msg += `💰 *ESTIMATED TOTAL:* *Rs.${grandTotal.toLocaleString('en-IN')}/-*\n`;
   msg += `${lineSeparator}\n\n`;
 
-  msg += `_Note: This is an order booking enquiry. Final billing, dispatch schedule, and stock verification will be confirmed by Sri Sai Traders._\n`;
+  msg += `_Compliance Disclaimer: As per No.R4(2)83/CC 405/2023 compliance of Directives of honourable Supreme Court of India in WP (C) 728 of 2015 - Reg, we don’t sell any sort of crackers or any related activities with relevant to purchases. The catalog is just to view the products and understand._\n\n`;
+  msg += `_Note: This is a product catalogue enquiry only. Availability and information will be confirmed by Sri Sai Traders._\n`;
   msg += `📞 Contact: ${STORE_CONTACT.primaryPhone} | ${STORE_CONTACT.phones[1]}`;
 
   return msg;

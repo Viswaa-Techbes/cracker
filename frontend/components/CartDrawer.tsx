@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { X, ShoppingBag, ArrowRight, MessageCircle } from 'lucide-react';
+import { X, ShoppingBag, ArrowRight, MessageCircle, AlertTriangle } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
 import CartItem from './CartItem';
 
@@ -45,6 +45,15 @@ export default function CartDrawer() {
             >
               <X className="w-5 h-5" />
             </button>
+          </div>
+
+          {/* Compliance Disclaimer Notice */}
+          <div className="p-3 bg-[#FFFBEB] border-b border-amber-200 text-amber-950 text-[11px] leading-relaxed flex items-start gap-2">
+            <AlertTriangle className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+            <p className="font-medium">
+              <strong className="font-extrabold text-amber-900">Disclaimer: </strong>
+              As per No.R4(2)83/CC 405/2023 compliance of Directives of honourable Supreme Court of India in WP (C) 728 of 2015 - Reg, we don’t sell any sort of crackers or any related activities with relevant to purchases. The catalog is just to view the products and understand.
+            </p>
           </div>
 
           {/* Cart Body */}

@@ -31,6 +31,7 @@ import { getImageUrl, fetchApi } from '@/lib/api';
 import { openWhatsAppEnquiry } from '@/lib/whatsapp';
 import { useToast } from '@/lib/toastContext';
 import { STORE_CONTACT } from '@/lib/catalogueData';
+import LegalDisclaimerBanner from '@/components/LegalDisclaimerBanner';
 
 type BookingStep = 'cart' | 'details' | 'overview';
 
@@ -269,25 +270,30 @@ export default function CartPage() {
   // Empty cart view
   if (items.length === 0) {
     return (
-      <div className="py-20 bg-[#F8FAFC] min-h-[70vh] flex items-center justify-center">
-        <div className="bg-white rounded-3xl border border-slate-200/90 p-8 sm:p-12 text-center max-w-lg mx-auto shadow-sm">
-          <div className="w-20 h-20 rounded-2xl bg-red-50 text-[#D32F2F] flex items-center justify-center mx-auto mb-5 shadow-inner">
-            <ShoppingBag className="w-10 h-10" />
-          </div>
-          <h1 className="text-2xl font-black text-slate-900 tracking-tight">
-            Your Enquiry Cart is Empty
-          </h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed font-medium">
-            You haven&apos;t added any crackers to your enquiry list yet. Browse our full 140-item catalogue to select sparklers, pots, chakkars, and multi-shots!
-          </p>
-          <div className="mt-8 flex justify-center">
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-extrabold text-sm shadow-md transition-all active:scale-95"
-            >
-              <Sparkles className="w-4 h-4" />
-              <span>Explore 2026 Catalogue</span>
-            </Link>
+      <div className="py-10 sm:py-14 bg-[#F8FAFC] min-h-[70vh]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          {/* Prominent Legal Disclaimer Banner */}
+          <LegalDisclaimerBanner variant="card" />
+
+          <div className="bg-white rounded-3xl border border-slate-200/90 p-8 sm:p-12 text-center max-w-lg mx-auto shadow-sm">
+            <div className="w-20 h-20 rounded-2xl bg-red-50 text-[#D32F2F] flex items-center justify-center mx-auto mb-5 shadow-inner">
+              <ShoppingBag className="w-10 h-10" />
+            </div>
+            <h1 className="text-2xl font-black text-slate-900 tracking-tight">
+              Your Enquiry Cart is Empty
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed font-medium">
+              You haven&apos;t added any crackers to your enquiry list yet. Browse our full 140-item catalogue to view sparklers, pots, chakkars, and multi-shots!
+            </p>
+            <div className="mt-8 flex justify-center">
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-extrabold text-sm shadow-md transition-all active:scale-95"
+              >
+                <Sparkles className="w-4 h-4" />
+                <span>Explore 2026 Catalogue</span>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -311,8 +317,8 @@ export default function CartPage() {
             <span>&gt;</span>
             <span className="text-slate-900 font-bold">
               {currentStep === 'cart' && 'Enquiry Cart'}
-              {currentStep === 'details' && 'Customer Details'}
-              {currentStep === 'overview' && 'Booking Overview'}
+              {currentStep === 'details' && 'Contact Details'}
+              {currentStep === 'overview' && 'Enquiry Overview'}
             </span>
           </div>
 
@@ -320,11 +326,18 @@ export default function CartPage() {
             href="/products"
             className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-[#D32F2F] transition-colors border border-slate-300 rounded-lg px-3 py-1.5 bg-white shadow-2xs"
           >
-            <span>+ Continue Shopping</span>
+            <span>+ Continue Browsing Catalogue</span>
           </Link>
         </div>
 
-        {/* Stepped Booking Progress Header */}
+        {/* ========================================================= */}
+        {/* PROMINENT COMPLIANCE DISCLAIMER (BEFORE PRODUCTS/DETAILS) */}
+        {/* ========================================================= */}
+        <div className="mb-6">
+          <LegalDisclaimerBanner variant="card" />
+        </div>
+
+        {/* Stepped Enquiry Progress Header */}
         <div className="mb-8 bg-white rounded-2xl border border-slate-200/90 shadow-sm p-4 sm:p-5">
           <div className="flex items-center justify-between max-w-2xl mx-auto relative">
             {/* Step 1 */}
@@ -347,7 +360,7 @@ export default function CartPage() {
                   currentStep === 'cart' ? 'text-[#D32F2F]' : 'text-slate-700'
                 }`}
               >
-                1. Product Selection
+                1. Selected Products
               </span>
             </button>
 
@@ -388,7 +401,7 @@ export default function CartPage() {
                     : 'text-slate-400'
                 }`}
               >
-                2. Customer Details
+                2. Contact Details
               </span>
             </button>
 
@@ -416,14 +429,14 @@ export default function CartPage() {
                     : 'bg-slate-200 text-slate-500'
                 }`}
               >
-                3
+                {currentStep === 'overview' ? <CheckCircle2 className="w-5 h-5" /> : '3'}
               </div>
               <span
                 className={`text-[11px] sm:text-xs font-bold ${
                   currentStep === 'overview' ? 'text-[#D32F2F]' : 'text-slate-400'
                 }`}
               >
-                3. Booking Overview
+                3. Enquiry Overview
               </span>
             </button>
           </div>
@@ -436,10 +449,10 @@ export default function CartPage() {
           <div className="space-y-6">
             <div className="mb-2">
               <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                Your Product Selection
+                Selected Products for Enquiry
               </h1>
               <p className="text-xs sm:text-sm text-slate-500 mt-1 font-medium">
-                Review your items, modify quantities, and proceed to provide your delivery details.
+                Review your items, modify quantities, and proceed to provide your contact details for WhatsApp enquiry.
               </p>
             </div>
 
@@ -563,7 +576,7 @@ export default function CartPage() {
                 onClick={handleProceedToDetails}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-black text-sm sm:text-base shadow-lg shadow-red-950/15 transition-all transform hover:-translate-y-0.5 active:scale-95 cursor-pointer"
               >
-                <span>Proceed to Customer Details</span>
+                <span>Proceed to Contact Details</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -571,16 +584,16 @@ export default function CartPage() {
         )}
 
         {/* ========================================================= */}
-        {/* STEP 2: CUSTOMER & BOOKING DETAILS FORM                   */}
+        {/* STEP 2: CONTACT & LOCATION DETAILS FORM                   */}
         {/* ========================================================= */}
         {currentStep === 'details' && (
           <form onSubmit={handleProceedToOverview} className="space-y-6">
             <div className="mb-2">
               <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                Customer & Delivery Details
+                Contact & Location Details
               </h1>
               <p className="text-xs sm:text-sm text-slate-500 mt-1 font-medium">
-                Enter your contact info so Sri Sai Traders can process your booking enquiry.
+                Enter your contact info so Sri Sai Traders can process your catalogue enquiry.
               </p>
             </div>
 
@@ -627,7 +640,7 @@ export default function CartPage() {
               {/* Delivery Address */}
               <div className="space-y-1.5">
                 <label className="text-xs font-bold text-slate-700">
-                  Complete Delivery Address <span className="text-red-600">*</span>
+                  Contact / Delivery Address <span className="text-red-600">*</span>
                 </label>
                 <textarea
                   required
@@ -709,14 +722,14 @@ export default function CartPage() {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-sm transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
-                <span>Back to Cart</span>
+                <span>Back to Enquiry Cart</span>
               </button>
 
               <button
                 type="submit"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-black text-sm sm:text-base shadow-lg shadow-red-950/15 transition-all transform hover:-translate-y-0.5 active:scale-95 cursor-pointer"
               >
-                <span>Proceed to Booking Overview</span>
+                <span>Proceed to Enquiry Overview</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -724,19 +737,19 @@ export default function CartPage() {
         )}
 
         {/* ========================================================= */}
-        {/* STEP 3: BOOKING OVERVIEW WITH TRANSPORTATION CHARGES      */}
+        {/* STEP 3: ENQUIRY OVERVIEW WITH TRANSPORTATION CHARGES      */}
         {/* ========================================================= */}
         {currentStep === 'overview' && (
           <div className="space-y-6">
             <div className="mb-2">
               <span className="text-xs font-extrabold uppercase tracking-wider text-[#D32F2F] bg-red-50 border border-red-200 px-3 py-1 rounded-full">
-                Final Review
+                Enquiry Review
               </span>
               <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mt-2">
-                BOOKING OVERVIEW
+                ENQUIRY OVERVIEW
               </h1>
               <p className="text-xs sm:text-sm text-slate-500 mt-1 font-medium">
-                Review your items, recipient details, and confirm additional transportation charges before submitting.
+                Review your selected items, contact details, and estimated transportation before submitting your enquiry.
               </p>
             </div>
 
@@ -746,7 +759,7 @@ export default function CartPage() {
                 <div className="flex items-center gap-2">
                   <ShoppingBag className="w-4 h-4 text-[#D32F2F]" />
                   <h3 className="text-sm font-black text-slate-900">
-                    Selected Services & Products ({items.length})
+                    Selected Catalogue Products ({items.length})
                   </h3>
                 </div>
                 <button
@@ -801,7 +814,7 @@ export default function CartPage() {
               <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                 <div className="flex items-center gap-2">
                   <User className="w-4 h-4 text-[#D32F2F]" />
-                  <h3 className="text-sm font-black text-slate-900">Customer Details</h3>
+                  <h3 className="text-sm font-black text-slate-900">Contact Details</h3>
                 </div>
                 <button
                   type="button"
@@ -823,7 +836,7 @@ export default function CartPage() {
                   <span className="text-slate-900 font-bold text-sm">{mobileNumber || '—'}</span>
                 </div>
                 <div className="sm:col-span-2">
-                  <span className="text-slate-400 font-semibold block">Delivery Address:</span>
+                  <span className="text-slate-400 font-semibold block">Contact / Delivery Address:</span>
                   <span className="text-slate-900 font-medium leading-relaxed">
                     {address}
                     {city ? `, ${city}` : ''}
@@ -849,7 +862,7 @@ export default function CartPage() {
             <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-7">
               <div className="mb-4">
                 <h3 className="text-base sm:text-lg font-black text-slate-900">
-                  Transportation
+                  Transportation Estimate
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500 font-medium mt-1">
                   An additional transportation charge may apply based on the delivery location.
@@ -904,7 +917,7 @@ export default function CartPage() {
             <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-7 space-y-3">
               <div className="border-b border-slate-100 pb-3">
                 <h3 className="text-sm font-black text-slate-900 uppercase tracking-wider">
-                  PRICE SUMMARY
+                  ESTIMATED PRICE SUMMARY
                 </h3>
               </div>
 
@@ -926,10 +939,10 @@ export default function CartPage() {
                 <div className="border-t border-dashed border-slate-200 pt-3 mt-2 flex items-baseline justify-between">
                   <div>
                     <span className="text-base sm:text-lg font-black text-slate-900 block leading-tight">
-                      Grand Total
+                      Grand Total (Estimated)
                     </span>
                     <span className="text-[11px] text-slate-400 font-medium">
-                      Inclusive of products & transportation
+                      Indicative amount for catalogue enquiry
                     </span>
                   </div>
                   <div className="text-right">
@@ -949,7 +962,7 @@ export default function CartPage() {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-sm transition-colors cursor-pointer"
               >
                 <ArrowLeft className="w-4 h-4" />
-                <span>Back to Customer Details</span>
+                <span>Back to Contact Details</span>
               </button>
 
               <button
@@ -959,7 +972,7 @@ export default function CartPage() {
                 className="w-full sm:flex-1 py-4 px-6 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-black text-base sm:text-lg flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-950/20 transition-all transform hover:-translate-y-0.5 active:scale-95 cursor-pointer disabled:opacity-50"
               >
                 <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
-                <span>Confirm & Submit Booking Enquiry (via WhatsApp)</span>
+                <span>Submit Product Enquiry (via WhatsApp)</span>
               </button>
             </div>
           </div>
@@ -970,11 +983,11 @@ export default function CartPage() {
           <div className="flex flex-wrap items-center justify-around gap-4 text-xs font-bold text-center">
             <div className="flex items-center gap-1.5">
               <Zap className="w-4 h-4 text-amber-400" />
-              <span>Quick Booking Enquiry</span>
+              <span>Quick Product Enquiry</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Tag className="w-4 h-4 text-amber-400" />
-              <span>Transparent Pricing & Charges</span>
+              <span>Transparent Pricing & Information</span>
             </div>
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-amber-400" />
@@ -982,17 +995,22 @@ export default function CartPage() {
             </div>
             <div className="flex items-center gap-1.5">
               <PartyPopper className="w-4 h-4 text-amber-400" />
-              <span>Wholesale & Retail Orders</span>
+              <span>Wholesale & Retail Enquiries</span>
             </div>
           </div>
         </div>
 
         {/* Safety & Legal Notice Box */}
-        <div className="mt-6 p-4 rounded-2xl bg-amber-500/10 border border-amber-300 text-amber-950 text-xs flex items-center gap-3">
-          <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0" />
-          <p className="font-semibold leading-relaxed">
-            All fireworks bookings are subject to state regulations and local delivery guidelines. Sri Sai Traders will verify packing, stock availability, and transportation dispatch before final dispatch.
-          </p>
+        <div className="mt-6 p-4 rounded-2xl bg-[#FFFBEB] border border-amber-300 text-amber-950 text-xs flex items-start gap-3 shadow-xs">
+          <AlertTriangle className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <p className="font-extrabold text-amber-900 uppercase tracking-wide">
+              Compliance Notice & Guidelines:
+            </p>
+            <p className="font-medium leading-relaxed text-amber-950">
+              As per No.R4(2)83/CC 405/2023 compliance of Directives of honourable Supreme Court of India in WP (C) 728 of 2015 - Reg, we don’t sell any sort of crackers or any related activities with relevant to purchases. The catalog is just to view the products and understand. All pyrotechnic specifications are subject to PESO norms and regional safety guidelines.
+            </p>
+          </div>
         </div>
 
       </div>

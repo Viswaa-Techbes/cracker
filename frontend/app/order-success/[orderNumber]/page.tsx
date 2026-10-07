@@ -17,6 +17,7 @@ import { fetchApi } from '@/lib/api';
 import { formatCurrency, formatDate } from '@/lib/utils';
 import OrderStatusBadge from '@/components/OrderStatusBadge';
 import PaymentStatusBadge from '@/components/PaymentStatusBadge';
+import LegalDisclaimerBanner from '@/components/LegalDisclaimerBanner';
 
 export default function OrderSuccessPage() {
   const params = useParams();
@@ -75,8 +76,11 @@ export default function OrderSuccessPage() {
 
   return (
     <div className="py-12 bg-slate-50 min-h-screen">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 space-y-6">
         
+        {/* Prominent Legal Compliance Disclaimer Banner */}
+        <LegalDisclaimerBanner variant="card" />
+
         {/* Main Success Card */}
         <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm p-8 sm:p-10 text-center space-y-6">
           
@@ -87,13 +91,13 @@ export default function OrderSuccessPage() {
 
           <div>
             <span className="text-xs uppercase font-extrabold tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-              Order Confirmed
+              Enquiry Submitted
             </span>
             <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mt-3">
-              Order Placed Successfully
+              Enquiry Received Successfully
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 mt-2 max-w-md mx-auto">
-              Our team will contact you to confirm your order and offline payment arrangements.
+              Our team will review your enquiry list and contact you regarding product availability and details.
             </p>
           </div>
 
@@ -101,7 +105,7 @@ export default function OrderSuccessPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 bg-slate-50 rounded-2xl border border-slate-100 text-left">
             <div>
               <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
-                Order Number
+                Enquiry Reference
               </span>
               <span className="text-sm font-black text-slate-900 font-mono">
                 {order.orderNumber}
@@ -110,7 +114,7 @@ export default function OrderSuccessPage() {
 
             <div>
               <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
-                Total Amount
+                Estimated Total
               </span>
               <span className="text-base font-black text-festive-700">
                 {formatCurrency(order.totalAmount)}

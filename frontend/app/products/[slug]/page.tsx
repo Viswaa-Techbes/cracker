@@ -19,6 +19,7 @@ import { useCart } from '@/lib/cartContext';
 import { ProductItem } from '@/components/ProductCard';
 import ProductGrid from '@/components/ProductGrid';
 import { STORE_CONTACT } from '@/lib/catalogueData';
+import LegalDisclaimerBanner from '@/components/LegalDisclaimerBanner';
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -136,6 +137,11 @@ export default function ProductDetailPage() {
           <span>&gt;</span>
           <span className="text-slate-900 font-bold truncate max-w-xs">{product.name}</span>
         </nav>
+
+        {/* Legal Compliance Disclaimer Banner */}
+        <div className="mb-6">
+          <LegalDisclaimerBanner variant="card" />
+        </div>
 
         {/* Product Details Grid */}
         <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-10 mb-12">

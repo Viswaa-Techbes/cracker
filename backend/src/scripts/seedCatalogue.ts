@@ -54,7 +54,7 @@ const CATALOGUE_PRODUCTS: RawProductData[] = [
   { id: 10, name: '15 CM Triton Electric', category: 'Sparkles', packQuantity: '1 Box – 10 pcs', price: 50 },
 
   // Page 4
-  { id: 11, name: '30 CM Triton Electric', category: 'Sparkles', packQuantity: '1 Box – 5 pcs', price: 44 },
+  { id: 11, name: '30 CM Triton Electric', category: 'Sparkles', packQuantity: '1 Box – 5 pcs', price: 60 },
   { id: 12, name: '30 CM Gold Sparkles (Standard Company)', category: 'Sparkles', packQuantity: '1 Box – 5 pcs', price: 95, company: 'Standard Company', featured: true },
   { id: 13, name: '30 CM Crackling Sparkles (Standard Company)', category: 'Sparkles', packQuantity: '1 Box – 5 pcs', price: 100, company: 'Standard Company' },
   { id: 14, name: '30 CM Colour Glitzy', category: 'Sparkles', packQuantity: '1 Box – 5 pcs', price: 47 },
@@ -67,7 +67,7 @@ const CATALOGUE_PRODUCTS: RawProductData[] = [
   // Page 6
   { id: 18, name: 'Disco Flash (Standard Company)', category: 'Fancy', packQuantity: '1 Box – 10 pcs', price: 190, company: 'Standard Company', featured: true },
   { id: 19, name: 'Tug of war (Standard Company)', category: 'Fancy', packQuantity: '1 Box – 1 pcs', price: 300, company: 'Standard Company' },
-  { id: 20, name: 'Money in the Bank (Jai Joy Company)', category: 'Fancy', packQuantity: '1 Box – 3 pcs', price: 240, company: 'Jai Joy Company', featured: true },
+  { id: 20, name: 'Money in the Bank (Jai Joy Company)', category: 'Fancy', packQuantity: '1 Box – 3 pcs', price: 300, company: 'Jai Joy Company', featured: true },
   { id: 21, name: 'Money in the Bank (Starvel Company)', category: 'Fancy', packQuantity: '1 Box – 3 pcs', price: 240, company: 'Starvel Company' },
   { id: 22, name: 'Helicopter', category: 'Fancy', packQuantity: '1 Box – 5 pcs', price: 100 },
 
@@ -97,11 +97,11 @@ const CATALOGUE_PRODUCTS: RawProductData[] = [
   { id: 39, name: 'Flower Pot Giant', category: 'Flower Pot', packQuantity: '1 Box – 2 pcs', price: 350 },
   { id: 40, name: 'Colour Koti Deluxe (Yes Bro Company)', category: 'Flower Pot', packQuantity: '1 Box – 10 pcs', price: 600, company: 'Yes Bro Company' },
   { id: 41, name: 'I Cone Fountain', category: 'Flower Pot', packQuantity: '1 Box – 1 pcs', price: 200 },
-  { id: 42, name: 'Flower Pots Deluxe (Standard Company)', category: 'Flower Pot', packQuantity: '1 Box – 5 pcs', price: 420, company: 'Standard Company' },
+  { id: 42, name: 'Flower Pots Deluxe (Standard Company)', category: 'Flower Pot', packQuantity: '1 Box – 5 pcs', price: 550, company: 'Standard Company' },
 
   // Page 11
   { id: 43, name: 'Saravanavel’s Pajock Multicolour Small', category: 'Flower Pot', packQuantity: '1 Box – 10 pcs', price: 200 },
-  { id: 44, name: 'Tricolour Fountain (Standard Company)', category: 'Flower Pot', packQuantity: '1 Box – 5 pcs', price: 650, company: 'Standard Company' },
+  { id: 44, name: 'Tricolour Fountain (Standard Company)', category: 'Flower Pot', packQuantity: '1 Box – 5 pcs', price: 700, company: 'Standard Company' },
   { id: 45, name: 'Orion Fountain', category: 'Flower Pot', packQuantity: '1 Box – 1 pcs', price: 120 },
   { id: 46, name: 'Google Galatta', category: 'Flower Pot', packQuantity: '1 Box – 4 pcs', price: 170 },
   { id: 47, name: 'Colour Flowers Giant (Standard Company)', category: 'Flower Pot', packQuantity: '1 Box – 10 pcs', price: 650, company: 'Standard Company' },
@@ -143,22 +143,22 @@ const CATALOGUE_PRODUCTS: RawProductData[] = [
 
   // Page 17
   { id: 73, name: 'Gold Finch - 2 ½', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 350 },
-  { id: 74, name: 'Queens Land - 1¾', category: 'Comet', packQuantity: '1 Box – 3 pcs', price: 450 },
+  { id: 74, name: 'Queens Land - 1¾', category: 'Comet', packQuantity: '1 Box – 3 pcs', price: 600 },
   { id: 75, name: 'Sun (Thrisul Company)', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 170, company: 'Thrisul Company' },
-  { id: 76, name: 'Money Heist – 30 Multicolour Shot', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 550, featured: true },
+  { id: 76, name: 'Money Heist – 30 Multicolour Shot', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 750, featured: true },
 
   // Page 18
-  { id: 77, name: 'Time Travel - 60 Multicolour Shot', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 1100 },
-  { id: 78, name: 'Zodiac - 120 Multicolour Shot', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 2200, featured: true },
-  { id: 79, name: 'Colour Shower 2 ball - J10', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 400 },
+  { id: 77, name: 'Time Travel - 60 Multicolour Shot', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 1400 },
+  { id: 78, name: 'Zodiac - 120 Multicolour Shot', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 2800, featured: true },
+  { id: 79, name: 'Colour Shower 2 ball - J10', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 600 },
   { id: 80, name: 'Red Sunrise - J10 Double Ball', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 570 },
-  { id: 81, name: 'Night King', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 600 },
+  { id: 81, name: 'Night King', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 700 },
 
   // Page 19
-  { id: 82, name: 'Jet Airways', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 450 },
-  { id: 83, name: '7 Stars', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 600 },
-  { id: 84, name: 'Socker- Double Ball', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 680 },
-  { id: 85, name: 'Gold Finch 2.5 inch', category: 'Comet', packQuantity: '1 Box – 2 pcs', price: 520 },
+  { id: 82, name: 'Jet Airways', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 600 },
+  { id: 83, name: '7 Stars', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 700 },
+  { id: 84, name: 'Socker- Double Ball', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 800 },
+  { id: 85, name: 'Gold Finch 2.5 inch', category: 'Comet', packQuantity: '1 Box – 2 pcs', price: 650 },
   { id: 86, name: '10x10 100 Shots Star Moon', category: 'Comet', packQuantity: '1 Box – 1 pcs', price: 4900, featured: true },
 
   // Page 20
@@ -176,7 +176,7 @@ const CATALOGUE_PRODUCTS: RawProductData[] = [
   { id: 96, name: 'Turkey Bijili Crackers (Standard Company)', category: 'Crackers', packQuantity: '1 Packet – 100 pcs', price: 45, company: 'Standard Company' },
 
   // Page 22
-  { id: 97, name: 'Peafowl – 1K', category: 'Crackers', packQuantity: '1 Box – 1 pcs', price: 200 },
+  { id: 97, name: 'Peafowl – 1K', category: 'Crackers', packQuantity: '1 Box – 1 pcs', price: 250 },
   { id: 98, name: 'Redfort – 1000 Shell (Standard Company)', category: 'Crackers', packQuantity: '1 Box – 1 pcs', price: 550, company: 'Standard Company' },
   { id: 99, name: 'Red Thunder – 2K', category: 'Crackers', packQuantity: '1 Box – 1 pcs', price: 400 },
   { id: 100, name: 'Peacock Brust – 5K', category: 'Crackers', packQuantity: '1 Box – 1 pcs', price: 1000, featured: true },
@@ -200,7 +200,7 @@ const CATALOGUE_PRODUCTS: RawProductData[] = [
   { id: 112, name: 'King Cobra Giant', category: 'Crackers', packQuantity: '1 Box – 1 pcs', price: 25 },
   { id: 113, name: 'Royal Pair – 56 Giant', category: 'Crackers', packQuantity: '1 Box – 1 pcs', price: 65 },
   { id: 114, name: 'Colour Burst (Standard Company)', category: 'Holi Colour', packQuantity: '1 Box – 5 pcs', price: 350, company: 'Standard Company' },
-  { id: 115, name: 'Colouring Smoke', category: 'Holi Colour', packQuantity: '1 Box – 3 pcs', price: 160 },
+  { id: 115, name: 'Colouring Smoke', category: 'Holi Colour', packQuantity: '1 Box – 3 pcs', price: 200 },
 
   // Page 26
   { id: 116, name: 'Original Pop Pop', category: 'Hand Throw', packQuantity: '1 Box – 1 packet', price: 10, featured: true },
@@ -212,8 +212,8 @@ const CATALOGUE_PRODUCTS: RawProductData[] = [
   // Page 27
   { id: 121, name: 'Indian Dynamite', category: 'Bomb', packQuantity: '1 Box – 10 pcs', price: 220 },
   { id: 122, name: 'Cylinder Bomb With Smoke', category: 'Bomb', packQuantity: '1 Box – 2 pcs', price: 300 },
-  { id: 123, name: 'Evil Dead – 1 Kg', category: 'Paper Bomb', packQuantity: '1 Box – 1 pcs', price: 250, featured: true },
-  { id: 124, name: 'Evil Dead – ½ Kg', category: 'Paper Bomb', packQuantity: '1 Box – 1 pcs', price: 130 },
+  { id: 123, name: 'Evil Dead – 1 Kg', category: 'Paper Bomb', packQuantity: '1 Box – 1 pcs', price: 300, featured: true },
+  { id: 124, name: 'Evil Dead – ½ Kg', category: 'Paper Bomb', packQuantity: '1 Box – 1 pcs', price: 150 },
 
   // Page 28
   { id: 125, name: 'Roster Ultimate Fight – ¼ Kg', category: 'Paper Bomb', packQuantity: '1 Box – 1 pcs', price: 70 },
@@ -223,7 +223,7 @@ const CATALOGUE_PRODUCTS: RawProductData[] = [
   // Page 29
   { id: 128, name: 'Whistling Rocket', category: 'Rocket', packQuantity: '1 Box – 10 pcs', price: 240, featured: true },
   { id: 129, name: 'Lunik Express', category: 'Rocket', packQuantity: '1 Box – 10 pcs', price: 200 },
-  { id: 130, name: 'Bomb Rockets (Standard Company)', category: 'Rocket', packQuantity: '1 Box – 10 pcs', price: 200, company: 'Standard Company' },
+  { id: 130, name: 'Bomb Rockets (Standard Company)', category: 'Rocket', packQuantity: '1 Box – 10 pcs', price: 240, company: 'Standard Company' },
 
   // Page 30
   { id: 131, name: '10 Colour Rocket', category: 'Rocket', packQuantity: '1 Box – 6 pcs', price: 530 },
